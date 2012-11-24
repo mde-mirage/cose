@@ -26,29 +26,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface State extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(EObject)
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
    * @see org.xtext.example.iptables.iptables.IptablesPackage#getState_Name()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EObject getName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.iptables.iptables.State#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.iptables.iptables.State#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
+   * @param value the new value of the '<em>Name</em>' attribute.
    * @see #getName()
    * @generated
    */
-  void setName(EObject value);
+  void setName(String value);
 
 } // State

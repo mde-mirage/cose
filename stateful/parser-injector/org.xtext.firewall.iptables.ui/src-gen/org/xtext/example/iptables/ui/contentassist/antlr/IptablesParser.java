@@ -41,7 +41,7 @@ public class IptablesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFilterSpecAccess().getOptionAlternatives_1_0(), "rule__FilterSpec__OptionAlternatives_1_0");
 					put(grammarAccess.getMatchAccess().getNameAlternatives_0(), "rule__Match__NameAlternatives_0");
 					put(grammarAccess.getStateAccess().getNameAlternatives_0(), "rule__State__NameAlternatives_0");
-					put(grammarAccess.getStateFulMatchStatesAccess().getNameAlternatives_0(), "rule__StateFulMatchStates__NameAlternatives_0");
+					put(grammarAccess.getStateFulMatchStatesAccess().getAlternatives(), "rule__StateFulMatchStates__Alternatives");
 					put(grammarAccess.getTCPFlagAccess().getNameAlternatives_0(), "rule__TCPFlag__NameAlternatives_0");
 					put(grammarAccess.getProtocolAccess().getAlternatives(), "rule__Protocol__Alternatives");
 					put(grammarAccess.getFilterSpecAccess().getGroup(), "rule__FilterSpec__Group__0");
@@ -71,10 +71,10 @@ public class IptablesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFilterDeclarationAccess().getFilterAssignment(), "rule__FilterDeclaration__FilterAssignment");
 					put(grammarAccess.getFilterSpecAccess().getOptionAssignment_1(), "rule__FilterSpec__OptionAssignment_1");
 					put(grammarAccess.getFilterSpecAccess().getChainAssignment_2(), "rule__FilterSpec__ChainAssignment_2");
-					put(grammarAccess.getFilterSpecAccess().getIpAssignment_3_1(), "rule__FilterSpec__IpAssignment_3_1");
-					put(grammarAccess.getFilterSpecAccess().getInterfaceAssignment_4_1(), "rule__FilterSpec__InterfaceAssignment_4_1");
-					put(grammarAccess.getFilterSpecAccess().getIpDstAssignment_5_1(), "rule__FilterSpec__IpDstAssignment_5_1");
-					put(grammarAccess.getFilterSpecAccess().getProtocolAssignment_6_1(), "rule__FilterSpec__ProtocolAssignment_6_1");
+					put(grammarAccess.getFilterSpecAccess().getProtocolAssignment_3_1(), "rule__FilterSpec__ProtocolAssignment_3_1");
+					put(grammarAccess.getFilterSpecAccess().getIpAssignment_4_1(), "rule__FilterSpec__IpAssignment_4_1");
+					put(grammarAccess.getFilterSpecAccess().getInterfaceAssignment_5_1(), "rule__FilterSpec__InterfaceAssignment_5_1");
+					put(grammarAccess.getFilterSpecAccess().getIpDstAssignment_6_1(), "rule__FilterSpec__IpDstAssignment_6_1");
 					put(grammarAccess.getFilterSpecAccess().getSourcePortAssignment_7_1(), "rule__FilterSpec__SourcePortAssignment_7_1");
 					put(grammarAccess.getFilterSpecAccess().getDestinationPortAssignment_8_1(), "rule__FilterSpec__DestinationPortAssignment_8_1");
 					put(grammarAccess.getFilterSpecAccess().getNegAssignment_9(), "rule__FilterSpec__NegAssignment_9");
@@ -96,8 +96,6 @@ public class IptablesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLPAccess().getNameAssignment(), "rule__LP__NameAssignment");
 					put(grammarAccess.getMatchAccess().getNameAssignment(), "rule__Match__NameAssignment");
 					put(grammarAccess.getStateAccess().getNameAssignment(), "rule__State__NameAssignment");
-					put(grammarAccess.getStateFulMatchStatesAccess().getNameAssignment(), "rule__StateFulMatchStates__NameAssignment");
-					put(grammarAccess.getNormalMatchStatesAccess().getNameAssignment(), "rule__NormalMatchStates__NameAssignment");
 					put(grammarAccess.getTCPFlagAccess().getNameAssignment(), "rule__TCPFlag__NameAssignment");
 					put(grammarAccess.getChainAccess().getChainNameAssignment(), "rule__Chain__ChainNameAssignment");
 					put(grammarAccess.getCustomChainAccess().getNameAssignment(), "rule__CustomChain__NameAssignment");

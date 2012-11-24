@@ -200,13 +200,22 @@ public interface IptablesPackage extends EPackage
   int FILTER_SPEC__CHAIN = FILTERING_SPEC_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Protocol</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILTER_SPEC__PROTOCOL = FILTERING_SPEC_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Ip</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FILTER_SPEC__IP = FILTERING_SPEC_FEATURE_COUNT + 2;
+  int FILTER_SPEC__IP = FILTERING_SPEC_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Interface</b></em>' containment reference.
@@ -215,7 +224,7 @@ public interface IptablesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILTER_SPEC__INTERFACE = FILTERING_SPEC_FEATURE_COUNT + 3;
+  int FILTER_SPEC__INTERFACE = FILTERING_SPEC_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Ip Dst</b></em>' attribute.
@@ -224,16 +233,7 @@ public interface IptablesPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILTER_SPEC__IP_DST = FILTERING_SPEC_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Protocol</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FILTER_SPEC__PROTOCOL = FILTERING_SPEC_FEATURE_COUNT + 5;
+  int FILTER_SPEC__IP_DST = FILTERING_SPEC_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Source Port</b></em>' attribute.
@@ -447,7 +447,7 @@ public interface IptablesPackage extends EPackage
   int STATE = 8;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -465,62 +465,6 @@ public interface IptablesPackage extends EPackage
   int STATE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.iptables.iptables.impl.StateFulMatchStatesImpl <em>State Ful Match States</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.iptables.iptables.impl.StateFulMatchStatesImpl
-   * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getStateFulMatchStates()
-   * @generated
-   */
-  int STATE_FUL_MATCH_STATES = 9;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATE_FUL_MATCH_STATES__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>State Ful Match States</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATE_FUL_MATCH_STATES_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.iptables.iptables.impl.NormalMatchStatesImpl <em>Normal Match States</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.iptables.iptables.impl.NormalMatchStatesImpl
-   * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getNormalMatchStates()
-   * @generated
-   */
-  int NORMAL_MATCH_STATES = 10;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_MATCH_STATES__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Normal Match States</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_MATCH_STATES_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.iptables.iptables.impl.TCPFlagImpl <em>TCP Flag</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -528,7 +472,7 @@ public interface IptablesPackage extends EPackage
    * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getTCPFlag()
    * @generated
    */
-  int TCP_FLAG = 11;
+  int TCP_FLAG = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -556,7 +500,7 @@ public interface IptablesPackage extends EPackage
    * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getChain()
    * @generated
    */
-  int CHAIN = 12;
+  int CHAIN = 10;
 
   /**
    * The feature id for the '<em><b>Chain Name</b></em>' attribute.
@@ -584,7 +528,7 @@ public interface IptablesPackage extends EPackage
    * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getCustomChain()
    * @generated
    */
-  int CUSTOM_CHAIN = 13;
+  int CUSTOM_CHAIN = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -612,7 +556,7 @@ public interface IptablesPackage extends EPackage
    * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getChainDeclaration()
    * @generated
    */
-  int CHAIN_DECLARATION = 14;
+  int CHAIN_DECLARATION = 12;
 
   /**
    * The number of structural features of the '<em>Chain Declaration</em>' class.
@@ -631,7 +575,7 @@ public interface IptablesPackage extends EPackage
    * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getChainName()
    * @generated
    */
-  int CHAIN_NAME = 15;
+  int CHAIN_NAME = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -769,6 +713,17 @@ public interface IptablesPackage extends EPackage
   EReference getFilterSpec_Chain();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.iptables.iptables.FilterSpec#getProtocol <em>Protocol</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Protocol</em>'.
+   * @see org.xtext.example.iptables.iptables.FilterSpec#getProtocol()
+   * @see #getFilterSpec()
+   * @generated
+   */
+  EAttribute getFilterSpec_Protocol();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtext.example.iptables.iptables.FilterSpec#getIp <em>Ip</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -800,17 +755,6 @@ public interface IptablesPackage extends EPackage
    * @generated
    */
   EAttribute getFilterSpec_IpDst();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.iptables.iptables.FilterSpec#getProtocol <em>Protocol</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Protocol</em>'.
-   * @see org.xtext.example.iptables.iptables.FilterSpec#getProtocol()
-   * @see #getFilterSpec()
-   * @generated
-   */
-  EAttribute getFilterSpec_Protocol();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.iptables.iptables.FilterSpec#getSourcePort <em>Source Port</em>}'.
@@ -1018,57 +962,15 @@ public interface IptablesPackage extends EPackage
   EClass getState();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.iptables.iptables.State#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.iptables.iptables.State#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @return the meta object for the attribute '<em>Name</em>'.
    * @see org.xtext.example.iptables.iptables.State#getName()
    * @see #getState()
    * @generated
    */
-  EReference getState_Name();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.iptables.iptables.StateFulMatchStates <em>State Ful Match States</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>State Ful Match States</em>'.
-   * @see org.xtext.example.iptables.iptables.StateFulMatchStates
-   * @generated
-   */
-  EClass getStateFulMatchStates();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.iptables.iptables.StateFulMatchStates#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.iptables.iptables.StateFulMatchStates#getName()
-   * @see #getStateFulMatchStates()
-   * @generated
-   */
-  EAttribute getStateFulMatchStates_Name();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.iptables.iptables.NormalMatchStates <em>Normal Match States</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Normal Match States</em>'.
-   * @see org.xtext.example.iptables.iptables.NormalMatchStates
-   * @generated
-   */
-  EClass getNormalMatchStates();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.iptables.iptables.NormalMatchStates#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.iptables.iptables.NormalMatchStates#getName()
-   * @see #getNormalMatchStates()
-   * @generated
-   */
-  EAttribute getNormalMatchStates_Name();
+  EAttribute getState_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.iptables.iptables.TCPFlag <em>TCP Flag</em>}'.
@@ -1286,6 +1188,14 @@ public interface IptablesPackage extends EPackage
     EReference FILTER_SPEC__CHAIN = eINSTANCE.getFilterSpec_Chain();
 
     /**
+     * The meta object literal for the '<em><b>Protocol</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FILTER_SPEC__PROTOCOL = eINSTANCE.getFilterSpec_Protocol();
+
+    /**
      * The meta object literal for the '<em><b>Ip</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1308,14 +1218,6 @@ public interface IptablesPackage extends EPackage
      * @generated
      */
     EAttribute FILTER_SPEC__IP_DST = eINSTANCE.getFilterSpec_IpDst();
-
-    /**
-     * The meta object literal for the '<em><b>Protocol</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FILTER_SPEC__PROTOCOL = eINSTANCE.getFilterSpec_Protocol();
 
     /**
      * The meta object literal for the '<em><b>Source Port</b></em>' attribute feature.
@@ -1478,48 +1380,12 @@ public interface IptablesPackage extends EPackage
     EClass STATE = eINSTANCE.getState();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATE__NAME = eINSTANCE.getState_Name();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.iptables.iptables.impl.StateFulMatchStatesImpl <em>State Ful Match States</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.iptables.iptables.impl.StateFulMatchStatesImpl
-     * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getStateFulMatchStates()
-     * @generated
-     */
-    EClass STATE_FUL_MATCH_STATES = eINSTANCE.getStateFulMatchStates();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STATE_FUL_MATCH_STATES__NAME = eINSTANCE.getStateFulMatchStates_Name();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.iptables.iptables.impl.NormalMatchStatesImpl <em>Normal Match States</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.iptables.iptables.impl.NormalMatchStatesImpl
-     * @see org.xtext.example.iptables.iptables.impl.IptablesPackageImpl#getNormalMatchStates()
-     * @generated
-     */
-    EClass NORMAL_MATCH_STATES = eINSTANCE.getNormalMatchStates();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NORMAL_MATCH_STATES__NAME = eINSTANCE.getNormalMatchStates_Name();
+    EAttribute STATE__NAME = eINSTANCE.getState_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.iptables.iptables.impl.TCPFlagImpl <em>TCP Flag</em>}' class.

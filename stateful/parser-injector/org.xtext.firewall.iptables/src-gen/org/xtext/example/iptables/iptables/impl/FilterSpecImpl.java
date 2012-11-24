@@ -38,10 +38,10 @@ import org.xtext.example.iptables.iptables.TCPFlag;
  * <ul>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getOption <em>Option</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getChain <em>Chain</em>}</li>
+ *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getIp <em>Ip</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getInterface <em>Interface</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getIpDst <em>Ip Dst</em>}</li>
- *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#getDestinationPort <em>Destination Port</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.impl.FilterSpecImpl#isNeg <em>Neg</em>}</li>
@@ -92,6 +92,26 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
   protected Chain chain;
 
   /**
+   * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProtocol()
+   * @generated
+   * @ordered
+   */
+  protected static final String PROTOCOL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProtocol()
+   * @generated
+   * @ordered
+   */
+  protected String protocol = PROTOCOL_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getIp() <em>Ip</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -140,26 +160,6 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
    * @ordered
    */
   protected String ipDst = IP_DST_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProtocol()
-   * @generated
-   * @ordered
-   */
-  protected static final String PROTOCOL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProtocol()
-   * @generated
-   * @ordered
-   */
-  protected String protocol = PROTOCOL_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSourcePort() <em>Source Port</em>}' attribute.
@@ -448,6 +448,29 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getProtocol()
+  {
+    return protocol;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setProtocol(String newProtocol)
+  {
+    String oldProtocol = protocol;
+    protocol = newProtocol;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, IptablesPackage.FILTER_SPEC__PROTOCOL, oldProtocol, protocol));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getIp()
   {
     return ip;
@@ -535,29 +558,6 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
     ipDst = newIpDst;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, IptablesPackage.FILTER_SPEC__IP_DST, oldIpDst, ipDst));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getProtocol()
-  {
-    return protocol;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setProtocol(String newProtocol)
-  {
-    String oldProtocol = protocol;
-    protocol = newProtocol;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IptablesPackage.FILTER_SPEC__PROTOCOL, oldProtocol, protocol));
   }
 
   /**
@@ -901,14 +901,14 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
         return getOption();
       case IptablesPackage.FILTER_SPEC__CHAIN:
         return getChain();
+      case IptablesPackage.FILTER_SPEC__PROTOCOL:
+        return getProtocol();
       case IptablesPackage.FILTER_SPEC__IP:
         return getIp();
       case IptablesPackage.FILTER_SPEC__INTERFACE:
         return getInterface();
       case IptablesPackage.FILTER_SPEC__IP_DST:
         return getIpDst();
-      case IptablesPackage.FILTER_SPEC__PROTOCOL:
-        return getProtocol();
       case IptablesPackage.FILTER_SPEC__SOURCE_PORT:
         return getSourcePort();
       case IptablesPackage.FILTER_SPEC__DESTINATION_PORT:
@@ -954,6 +954,9 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
       case IptablesPackage.FILTER_SPEC__CHAIN:
         setChain((Chain)newValue);
         return;
+      case IptablesPackage.FILTER_SPEC__PROTOCOL:
+        setProtocol((String)newValue);
+        return;
       case IptablesPackage.FILTER_SPEC__IP:
         setIp((String)newValue);
         return;
@@ -962,9 +965,6 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
         return;
       case IptablesPackage.FILTER_SPEC__IP_DST:
         setIpDst((String)newValue);
-        return;
-      case IptablesPackage.FILTER_SPEC__PROTOCOL:
-        setProtocol((String)newValue);
         return;
       case IptablesPackage.FILTER_SPEC__SOURCE_PORT:
         setSourcePort((Integer)newValue);
@@ -1025,6 +1025,9 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
       case IptablesPackage.FILTER_SPEC__CHAIN:
         setChain((Chain)null);
         return;
+      case IptablesPackage.FILTER_SPEC__PROTOCOL:
+        setProtocol(PROTOCOL_EDEFAULT);
+        return;
       case IptablesPackage.FILTER_SPEC__IP:
         setIp(IP_EDEFAULT);
         return;
@@ -1033,9 +1036,6 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
         return;
       case IptablesPackage.FILTER_SPEC__IP_DST:
         setIpDst(IP_DST_EDEFAULT);
-        return;
-      case IptablesPackage.FILTER_SPEC__PROTOCOL:
-        setProtocol(PROTOCOL_EDEFAULT);
         return;
       case IptablesPackage.FILTER_SPEC__SOURCE_PORT:
         setSourcePort(SOURCE_PORT_EDEFAULT);
@@ -1091,14 +1091,14 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
         return OPTION_EDEFAULT == null ? option != null : !OPTION_EDEFAULT.equals(option);
       case IptablesPackage.FILTER_SPEC__CHAIN:
         return chain != null;
+      case IptablesPackage.FILTER_SPEC__PROTOCOL:
+        return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
       case IptablesPackage.FILTER_SPEC__IP:
         return IP_EDEFAULT == null ? ip != null : !IP_EDEFAULT.equals(ip);
       case IptablesPackage.FILTER_SPEC__INTERFACE:
         return interface_ != null;
       case IptablesPackage.FILTER_SPEC__IP_DST:
         return IP_DST_EDEFAULT == null ? ipDst != null : !IP_DST_EDEFAULT.equals(ipDst);
-      case IptablesPackage.FILTER_SPEC__PROTOCOL:
-        return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
       case IptablesPackage.FILTER_SPEC__SOURCE_PORT:
         return sourcePort != SOURCE_PORT_EDEFAULT;
       case IptablesPackage.FILTER_SPEC__DESTINATION_PORT:
@@ -1140,12 +1140,12 @@ public class FilterSpecImpl extends FilteringSpecImpl implements FilterSpec
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (option: ");
     result.append(option);
+    result.append(", protocol: ");
+    result.append(protocol);
     result.append(", ip: ");
     result.append(ip);
     result.append(", ipDst: ");
     result.append(ipDst);
-    result.append(", protocol: ");
-    result.append(protocol);
     result.append(", sourcePort: ");
     result.append(sourcePort);
     result.append(", destinationPort: ");

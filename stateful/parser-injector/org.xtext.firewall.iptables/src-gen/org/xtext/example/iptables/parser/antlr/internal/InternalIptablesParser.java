@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalIptablesParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'iptables'", "'-A'", "'-D'", "'-P'", "'-s'", "'-i'", "'-d'", "'-p'", "'--sport'", "'--dport'", "'!'", "'--syn'", "'--m'", "'--ctstate'", "','", "'--ctdir'", "'--ctstatus'", "'--state'", "'--tcp-flags'", "'-j'", "'--log-prefix'", "'conntrack'", "'State'", "'NEW'", "'NONE'", "'SYN_SENT'", "'SYN_RECV'", "'ESTABLISHED'", "'FIN_WAIT'", "'CLOSE_WAIT'", "'LAST_ACK'", "'TIME_WAIT'", "'CLOSE'", "'SYN'", "'ACK'", "'FIN'", "'RST'", "'ALL'", "'tcp'", "'udp'", "'icmp'", "'-N'", "'.'", "'/'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'iptables'", "'-A'", "'-D'", "'-P'", "'-p'", "'-s'", "'-i'", "'-d'", "'--sport'", "'--dport'", "'!'", "'--syn'", "'-m'", "'--ctstate'", "','", "'--ctdir'", "'--ctstatus'", "'--state'", "'--tcp-flags'", "'-j'", "'--log-prefix'", "'conntrack'", "'State'", "'NEW'", "'NONE'", "'SYN_SENT'", "'SYN_RECV'", "'ESTABLISHED'", "'FIN_WAIT'", "'CLOSE_WAIT'", "'LAST_ACK'", "'TIME_WAIT'", "'CLOSE'", "'SYN'", "'ACK'", "'FIN'", "'RST'", "'ALL'", "'PSH'", "'URG'", "'tcp'", "'udp'", "'icmp'", "'-N'", "'.'", "'/'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -36,6 +36,8 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int EOF=-1;
+    public static final int T__55=55;
+    public static final int T__56=56;
     public static final int T__19=19;
     public static final int T__51=51;
     public static final int T__16=16;
@@ -292,7 +294,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                 if ( ((LA2_1>=12 && LA2_1<=14)) ) {
                     alt2=2;
                 }
-                else if ( (LA2_1==52) ) {
+                else if ( (LA2_1==54) ) {
                     alt2=1;
                 }
                 else {
@@ -617,7 +619,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFilterSpec"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:242:1: ruleFilterSpec returns [EObject current=null] : (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-s' ( (lv_ip_4_0= ruleIPExpr ) ) )? (otherlv_5= '-i' ( (lv_interface_6_0= ruleInterface ) ) )? (otherlv_7= '-d' ( (lv_ipDst_8_0= ruleIPExpr ) ) )? (otherlv_9= '-p' ( (lv_protocol_10_0= ruleProtocol ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '--m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:242:1: ruleFilterSpec returns [EObject current=null] : (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-p' ( (lv_protocol_4_0= ruleProtocol ) ) )? (otherlv_5= '-s' ( (lv_ip_6_0= ruleIPExpr ) ) )? (otherlv_7= '-i' ( (lv_interface_8_0= ruleInterface ) ) )? (otherlv_9= '-d' ( (lv_ipDst_10_0= ruleIPExpr ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '-m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? ) ;
     public final EObject ruleFilterSpec() throws RecognitionException {
         EObject current = null;
 
@@ -649,13 +651,13 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
         Token otherlv_40=null;
         EObject lv_chain_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_ip_4_0 = null;
+        AntlrDatatypeRuleToken lv_protocol_4_0 = null;
 
-        EObject lv_interface_6_0 = null;
+        AntlrDatatypeRuleToken lv_ip_6_0 = null;
 
-        AntlrDatatypeRuleToken lv_ipDst_8_0 = null;
+        EObject lv_interface_8_0 = null;
 
-        AntlrDatatypeRuleToken lv_protocol_10_0 = null;
+        AntlrDatatypeRuleToken lv_ipDst_10_0 = null;
 
         EObject lv_matches_18_0 = null;
 
@@ -687,11 +689,11 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:245:28: ( (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-s' ( (lv_ip_4_0= ruleIPExpr ) ) )? (otherlv_5= '-i' ( (lv_interface_6_0= ruleInterface ) ) )? (otherlv_7= '-d' ( (lv_ipDst_8_0= ruleIPExpr ) ) )? (otherlv_9= '-p' ( (lv_protocol_10_0= ruleProtocol ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '--m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:246:1: (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-s' ( (lv_ip_4_0= ruleIPExpr ) ) )? (otherlv_5= '-i' ( (lv_interface_6_0= ruleInterface ) ) )? (otherlv_7= '-d' ( (lv_ipDst_8_0= ruleIPExpr ) ) )? (otherlv_9= '-p' ( (lv_protocol_10_0= ruleProtocol ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '--m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:245:28: ( (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-p' ( (lv_protocol_4_0= ruleProtocol ) ) )? (otherlv_5= '-s' ( (lv_ip_6_0= ruleIPExpr ) ) )? (otherlv_7= '-i' ( (lv_interface_8_0= ruleInterface ) ) )? (otherlv_9= '-d' ( (lv_ipDst_10_0= ruleIPExpr ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '-m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:246:1: (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-p' ( (lv_protocol_4_0= ruleProtocol ) ) )? (otherlv_5= '-s' ( (lv_ip_6_0= ruleIPExpr ) ) )? (otherlv_7= '-i' ( (lv_interface_8_0= ruleInterface ) ) )? (otherlv_9= '-d' ( (lv_ipDst_10_0= ruleIPExpr ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '-m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:246:1: (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-s' ( (lv_ip_4_0= ruleIPExpr ) ) )? (otherlv_5= '-i' ( (lv_interface_6_0= ruleInterface ) ) )? (otherlv_7= '-d' ( (lv_ipDst_8_0= ruleIPExpr ) ) )? (otherlv_9= '-p' ( (lv_protocol_10_0= ruleProtocol ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '--m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:246:3: otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-s' ( (lv_ip_4_0= ruleIPExpr ) ) )? (otherlv_5= '-i' ( (lv_interface_6_0= ruleInterface ) ) )? (otherlv_7= '-d' ( (lv_ipDst_8_0= ruleIPExpr ) ) )? (otherlv_9= '-p' ( (lv_protocol_10_0= ruleProtocol ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '--m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:246:1: (otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-p' ( (lv_protocol_4_0= ruleProtocol ) ) )? (otherlv_5= '-s' ( (lv_ip_6_0= ruleIPExpr ) ) )? (otherlv_7= '-i' ( (lv_interface_8_0= ruleInterface ) ) )? (otherlv_9= '-d' ( (lv_ipDst_10_0= ruleIPExpr ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '-m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )? )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:246:3: otherlv_0= 'iptables' ( ( (lv_option_1_1= '-A' | lv_option_1_2= '-D' | lv_option_1_3= '-P' ) ) ) ( (lv_chain_2_0= ruleChain ) ) (otherlv_3= '-p' ( (lv_protocol_4_0= ruleProtocol ) ) )? (otherlv_5= '-s' ( (lv_ip_6_0= ruleIPExpr ) ) )? (otherlv_7= '-i' ( (lv_interface_8_0= ruleInterface ) ) )? (otherlv_9= '-d' ( (lv_ipDst_10_0= ruleIPExpr ) ) )? (otherlv_11= '--sport' ( (lv_sourcePort_12_0= RULE_INT ) ) )? (otherlv_13= '--dport' ( (lv_destinationPort_14_0= RULE_INT ) ) )? ( (lv_neg_15_0= '!' ) )? ( (lv_syn_16_0= '--syn' ) )? (otherlv_17= '-m' ( (lv_matches_18_0= ruleMatch ) ) )? (otherlv_19= '--ctstate' ( (lv_states_20_0= ruleState ) ) (otherlv_21= ',' ( (lv_states_22_0= ruleState ) ) )* )? (otherlv_23= '--ctdir' ( (lv_dir_24_0= ruleDir ) ) )? (otherlv_25= '--ctstatus' ( (lv_status_26_0= ruleStatus ) ) )? (otherlv_27= '--state' ( (lv_states_28_0= ruleState ) ) (otherlv_29= ',' ( (lv_states_30_0= ruleState ) ) )* )? (otherlv_31= '--tcp-flags' ( (lv_examFlags_32_0= ruleTCPFlag ) ) (otherlv_33= ',' ( (lv_examFlags_34_0= ruleTCPFlag ) ) )* ( (lv_flags_35_0= ruleTCPFlag ) ) (otherlv_36= ',' ( (lv_flags_37_0= ruleTCPFlag ) ) )* )? (otherlv_38= '-j' )? ( (lv_target_39_0= ruleTarget ) ) (otherlv_40= '--log-prefix' ( (lv_lp_41_0= ruleLP ) ) )?
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleFilterSpec512); 
 
@@ -817,7 +819,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:310:2: (otherlv_3= '-s' ( (lv_ip_4_0= ruleIPExpr ) ) )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:310:2: (otherlv_3= '-p' ( (lv_protocol_4_0= ruleProtocol ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -826,23 +828,75 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:310:4: otherlv_3= '-s' ( (lv_ip_4_0= ruleIPExpr ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:310:4: otherlv_3= '-p' ( (lv_protocol_4_0= ruleProtocol ) )
                     {
                     otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleFilterSpec640); 
 
-                        	newLeafNode(otherlv_3, grammarAccess.getFilterSpecAccess().getSKeyword_3_0());
+                        	newLeafNode(otherlv_3, grammarAccess.getFilterSpecAccess().getPKeyword_3_0());
                         
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:314:1: ( (lv_ip_4_0= ruleIPExpr ) )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:315:1: (lv_ip_4_0= ruleIPExpr )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:314:1: ( (lv_protocol_4_0= ruleProtocol ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:315:1: (lv_protocol_4_0= ruleProtocol )
                     {
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:315:1: (lv_ip_4_0= ruleIPExpr )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:316:3: lv_ip_4_0= ruleIPExpr
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:315:1: (lv_protocol_4_0= ruleProtocol )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:316:3: lv_protocol_4_0= ruleProtocol
                     {
                      
-                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getIpIPExprParserRuleCall_3_1_0()); 
+                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getProtocolProtocolParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIPExpr_in_ruleFilterSpec661);
-                    lv_ip_4_0=ruleIPExpr();
+                    pushFollow(FOLLOW_ruleProtocol_in_ruleFilterSpec661);
+                    lv_protocol_4_0=ruleProtocol();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getFilterSpecRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"protocol",
+                            		lv_protocol_4_0, 
+                            		"Protocol");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:332:4: (otherlv_5= '-s' ( (lv_ip_6_0= ruleIPExpr ) ) )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==16) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:332:6: otherlv_5= '-s' ( (lv_ip_6_0= ruleIPExpr ) )
+                    {
+                    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleFilterSpec676); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getFilterSpecAccess().getSKeyword_4_0());
+                        
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:336:1: ( (lv_ip_6_0= ruleIPExpr ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:337:1: (lv_ip_6_0= ruleIPExpr )
+                    {
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:337:1: (lv_ip_6_0= ruleIPExpr )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:338:3: lv_ip_6_0= ruleIPExpr
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getIpIPExprParserRuleCall_4_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleIPExpr_in_ruleFilterSpec697);
+                    lv_ip_6_0=ruleIPExpr();
 
                     state._fsp--;
 
@@ -853,7 +907,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"ip",
-                            		lv_ip_4_0, 
+                            		lv_ip_6_0, 
                             		"IPExpr");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -869,32 +923,32 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:332:4: (otherlv_5= '-i' ( (lv_interface_6_0= ruleInterface ) ) )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:354:4: (otherlv_7= '-i' ( (lv_interface_8_0= ruleInterface ) ) )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA5_0==16) ) {
-                alt5=1;
+            if ( (LA6_0==17) ) {
+                alt6=1;
             }
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:332:6: otherlv_5= '-i' ( (lv_interface_6_0= ruleInterface ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:354:6: otherlv_7= '-i' ( (lv_interface_8_0= ruleInterface ) )
                     {
-                    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleFilterSpec676); 
+                    otherlv_7=(Token)match(input,17,FOLLOW_17_in_ruleFilterSpec712); 
 
-                        	newLeafNode(otherlv_5, grammarAccess.getFilterSpecAccess().getIKeyword_4_0());
+                        	newLeafNode(otherlv_7, grammarAccess.getFilterSpecAccess().getIKeyword_5_0());
                         
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:336:1: ( (lv_interface_6_0= ruleInterface ) )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:337:1: (lv_interface_6_0= ruleInterface )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:358:1: ( (lv_interface_8_0= ruleInterface ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:359:1: (lv_interface_8_0= ruleInterface )
                     {
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:337:1: (lv_interface_6_0= ruleInterface )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:338:3: lv_interface_6_0= ruleInterface
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:359:1: (lv_interface_8_0= ruleInterface )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:360:3: lv_interface_8_0= ruleInterface
                     {
                      
-                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getInterfaceInterfaceParserRuleCall_4_1_0()); 
+                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getInterfaceInterfaceParserRuleCall_5_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleInterface_in_ruleFilterSpec697);
-                    lv_interface_6_0=ruleInterface();
+                    pushFollow(FOLLOW_ruleInterface_in_ruleFilterSpec733);
+                    lv_interface_8_0=ruleInterface();
 
                     state._fsp--;
 
@@ -905,7 +959,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"interface",
-                            		lv_interface_6_0, 
+                            		lv_interface_8_0, 
                             		"Interface");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -921,32 +975,32 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:354:4: (otherlv_7= '-d' ( (lv_ipDst_8_0= ruleIPExpr ) ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:376:4: (otherlv_9= '-d' ( (lv_ipDst_10_0= ruleIPExpr ) ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA6_0==17) ) {
-                alt6=1;
+            if ( (LA7_0==18) ) {
+                alt7=1;
             }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:354:6: otherlv_7= '-d' ( (lv_ipDst_8_0= ruleIPExpr ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:376:6: otherlv_9= '-d' ( (lv_ipDst_10_0= ruleIPExpr ) )
                     {
-                    otherlv_7=(Token)match(input,17,FOLLOW_17_in_ruleFilterSpec712); 
+                    otherlv_9=(Token)match(input,18,FOLLOW_18_in_ruleFilterSpec748); 
 
-                        	newLeafNode(otherlv_7, grammarAccess.getFilterSpecAccess().getDKeyword_5_0());
+                        	newLeafNode(otherlv_9, grammarAccess.getFilterSpecAccess().getDKeyword_6_0());
                         
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:358:1: ( (lv_ipDst_8_0= ruleIPExpr ) )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:359:1: (lv_ipDst_8_0= ruleIPExpr )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:380:1: ( (lv_ipDst_10_0= ruleIPExpr ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:381:1: (lv_ipDst_10_0= ruleIPExpr )
                     {
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:359:1: (lv_ipDst_8_0= ruleIPExpr )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:360:3: lv_ipDst_8_0= ruleIPExpr
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:381:1: (lv_ipDst_10_0= ruleIPExpr )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:382:3: lv_ipDst_10_0= ruleIPExpr
                     {
                      
-                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getIpDstIPExprParserRuleCall_5_1_0()); 
+                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getIpDstIPExprParserRuleCall_6_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIPExpr_in_ruleFilterSpec733);
-                    lv_ipDst_8_0=ruleIPExpr();
+                    pushFollow(FOLLOW_ruleIPExpr_in_ruleFilterSpec769);
+                    lv_ipDst_10_0=ruleIPExpr();
 
                     state._fsp--;
 
@@ -957,60 +1011,8 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"ipDst",
-                            		lv_ipDst_8_0, 
+                            		lv_ipDst_10_0, 
                             		"IPExpr");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:376:4: (otherlv_9= '-p' ( (lv_protocol_10_0= ruleProtocol ) ) )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==18) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:376:6: otherlv_9= '-p' ( (lv_protocol_10_0= ruleProtocol ) )
-                    {
-                    otherlv_9=(Token)match(input,18,FOLLOW_18_in_ruleFilterSpec748); 
-
-                        	newLeafNode(otherlv_9, grammarAccess.getFilterSpecAccess().getPKeyword_6_0());
-                        
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:380:1: ( (lv_protocol_10_0= ruleProtocol ) )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:381:1: (lv_protocol_10_0= ruleProtocol )
-                    {
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:381:1: (lv_protocol_10_0= ruleProtocol )
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:382:3: lv_protocol_10_0= ruleProtocol
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getFilterSpecAccess().getProtocolProtocolParserRuleCall_6_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleProtocol_in_ruleFilterSpec769);
-                    lv_protocol_10_0=ruleProtocol();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getFilterSpecRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"protocol",
-                            		lv_protocol_10_0, 
-                            		"Protocol");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -1185,7 +1187,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:472:3: (otherlv_17= '--m' ( (lv_matches_18_0= ruleMatch ) ) )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:472:3: (otherlv_17= '-m' ( (lv_matches_18_0= ruleMatch ) ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1194,7 +1196,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:472:5: otherlv_17= '--m' ( (lv_matches_18_0= ruleMatch ) )
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:472:5: otherlv_17= '-m' ( (lv_matches_18_0= ruleMatch ) )
                     {
                     otherlv_17=(Token)match(input,23,FOLLOW_23_in_ruleFilterSpec922); 
 
@@ -2552,9 +2554,9 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_name_0_1 = null;
+        AntlrDatatypeRuleToken lv_name_0_1 = null;
 
-        EObject lv_name_0_2 = null;
+        AntlrDatatypeRuleToken lv_name_0_2 = null;
 
 
          enterRule(); 
@@ -2663,11 +2665,11 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStateFulMatchStates"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1064:1: entryRuleStateFulMatchStates returns [EObject current=null] : iv_ruleStateFulMatchStates= ruleStateFulMatchStates EOF ;
-    public final EObject entryRuleStateFulMatchStates() throws RecognitionException {
-        EObject current = null;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1064:1: entryRuleStateFulMatchStates returns [String current=null] : iv_ruleStateFulMatchStates= ruleStateFulMatchStates EOF ;
+    public final String entryRuleStateFulMatchStates() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleStateFulMatchStates = null;
+        AntlrDatatypeRuleToken iv_ruleStateFulMatchStates = null;
 
 
         try {
@@ -2675,13 +2677,13 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
             // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1066:2: iv_ruleStateFulMatchStates= ruleStateFulMatchStates EOF
             {
              newCompositeNode(grammarAccess.getStateFulMatchStatesRule()); 
-            pushFollow(FOLLOW_ruleStateFulMatchStates_in_entryRuleStateFulMatchStates2174);
+            pushFollow(FOLLOW_ruleStateFulMatchStates_in_entryRuleStateFulMatchStates2175);
             iv_ruleStateFulMatchStates=ruleStateFulMatchStates();
 
             state._fsp--;
 
-             current =iv_ruleStateFulMatchStates; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStateFulMatchStates2184); 
+             current =iv_ruleStateFulMatchStates.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStateFulMatchStates2186); 
 
             }
 
@@ -2699,42 +2701,36 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStateFulMatchStates"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1073:1: ruleStateFulMatchStates returns [EObject current=null] : ( ( (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose ) ) ) ;
-    public final EObject ruleStateFulMatchStates() throws RecognitionException {
-        EObject current = null;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1073:1: ruleStateFulMatchStates returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_NoneS_0= ruleNoneS | this_SynSent_1= ruleSynSent | this_SynRecv_2= ruleSynRecv | this_Established_3= ruleEstablished | this_FinWait_4= ruleFinWait | this_CloseWait_5= ruleCloseWait | this_LastAck_6= ruleLastAck | this_TimeWait_7= ruleTimeWait | this_Close_8= ruleClose ) ;
+    public final AntlrDatatypeRuleToken ruleStateFulMatchStates() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        AntlrDatatypeRuleToken lv_name_0_1 = null;
+        AntlrDatatypeRuleToken this_NoneS_0 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_2 = null;
+        AntlrDatatypeRuleToken this_SynSent_1 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_3 = null;
+        AntlrDatatypeRuleToken this_SynRecv_2 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_4 = null;
+        AntlrDatatypeRuleToken this_Established_3 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_5 = null;
+        AntlrDatatypeRuleToken this_FinWait_4 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_6 = null;
+        AntlrDatatypeRuleToken this_CloseWait_5 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_7 = null;
+        AntlrDatatypeRuleToken this_LastAck_6 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_8 = null;
+        AntlrDatatypeRuleToken this_TimeWait_7 = null;
 
-        AntlrDatatypeRuleToken lv_name_0_9 = null;
+        AntlrDatatypeRuleToken this_Close_8 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1076:28: ( ( ( (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose ) ) ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1077:1: ( ( (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose ) ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1076:28: ( (this_NoneS_0= ruleNoneS | this_SynSent_1= ruleSynSent | this_SynRecv_2= ruleSynRecv | this_Established_3= ruleEstablished | this_FinWait_4= ruleFinWait | this_CloseWait_5= ruleCloseWait | this_LastAck_6= ruleLastAck | this_TimeWait_7= ruleTimeWait | this_Close_8= ruleClose ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1077:1: (this_NoneS_0= ruleNoneS | this_SynSent_1= ruleSynSent | this_SynRecv_2= ruleSynRecv | this_Established_3= ruleEstablished | this_FinWait_4= ruleFinWait | this_CloseWait_5= ruleCloseWait | this_LastAck_6= ruleLastAck | this_TimeWait_7= ruleTimeWait | this_Close_8= ruleClose )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1077:1: ( ( (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose ) ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1078:1: ( (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose ) )
-            {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1078:1: ( (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1079:1: (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose )
-            {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1079:1: (lv_name_0_1= ruleNoneS | lv_name_0_2= ruleSynSent | lv_name_0_3= ruleSynRecv | lv_name_0_4= ruleEstablished | lv_name_0_5= ruleFinWait | lv_name_0_6= ruleCloseWait | lv_name_0_7= ruleLastAck | lv_name_0_8= ruleTimeWait | lv_name_0_9= ruleClose )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1077:1: (this_NoneS_0= ruleNoneS | this_SynSent_1= ruleSynSent | this_SynRecv_2= ruleSynRecv | this_Established_3= ruleEstablished | this_FinWait_4= ruleFinWait | this_CloseWait_5= ruleCloseWait | this_LastAck_6= ruleLastAck | this_TimeWait_7= ruleTimeWait | this_Close_8= ruleClose )
             int alt26=9;
             switch ( input.LA(1) ) {
             case 35:
@@ -2791,236 +2787,185 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
             switch (alt26) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1080:3: lv_name_0_1= ruleNoneS
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1078:5: this_NoneS_0= ruleNoneS
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameNoneSParserRuleCall_0_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleNoneS_in_ruleStateFulMatchStates2231);
-                    lv_name_0_1=ruleNoneS();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNoneSParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleNoneS_in_ruleStateFulMatchStates2233);
+                    this_NoneS_0=ruleNoneS();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_1, 
-                            		"NoneS");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_NoneS_0);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1095:8: lv_name_0_2= ruleSynSent
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1090:5: this_SynSent_1= ruleSynSent
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameSynSentParserRuleCall_0_1()); 
-                    	    
-                    pushFollow(FOLLOW_ruleSynSent_in_ruleStateFulMatchStates2250);
-                    lv_name_0_2=ruleSynSent();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getSynSentParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleSynSent_in_ruleStateFulMatchStates2266);
+                    this_SynSent_1=ruleSynSent();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_2, 
-                            		"SynSent");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_SynSent_1);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1110:8: lv_name_0_3= ruleSynRecv
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1102:5: this_SynRecv_2= ruleSynRecv
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameSynRecvParserRuleCall_0_2()); 
-                    	    
-                    pushFollow(FOLLOW_ruleSynRecv_in_ruleStateFulMatchStates2269);
-                    lv_name_0_3=ruleSynRecv();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getSynRecvParserRuleCall_2()); 
+                        
+                    pushFollow(FOLLOW_ruleSynRecv_in_ruleStateFulMatchStates2299);
+                    this_SynRecv_2=ruleSynRecv();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_3, 
-                            		"SynRecv");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_SynRecv_2);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1125:8: lv_name_0_4= ruleEstablished
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1114:5: this_Established_3= ruleEstablished
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameEstablishedParserRuleCall_0_3()); 
-                    	    
-                    pushFollow(FOLLOW_ruleEstablished_in_ruleStateFulMatchStates2288);
-                    lv_name_0_4=ruleEstablished();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getEstablishedParserRuleCall_3()); 
+                        
+                    pushFollow(FOLLOW_ruleEstablished_in_ruleStateFulMatchStates2332);
+                    this_Established_3=ruleEstablished();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_4, 
-                            		"Established");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_Established_3);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1140:8: lv_name_0_5= ruleFinWait
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1126:5: this_FinWait_4= ruleFinWait
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameFinWaitParserRuleCall_0_4()); 
-                    	    
-                    pushFollow(FOLLOW_ruleFinWait_in_ruleStateFulMatchStates2307);
-                    lv_name_0_5=ruleFinWait();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getFinWaitParserRuleCall_4()); 
+                        
+                    pushFollow(FOLLOW_ruleFinWait_in_ruleStateFulMatchStates2365);
+                    this_FinWait_4=ruleFinWait();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_5, 
-                            		"FinWait");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_FinWait_4);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1155:8: lv_name_0_6= ruleCloseWait
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1138:5: this_CloseWait_5= ruleCloseWait
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameCloseWaitParserRuleCall_0_5()); 
-                    	    
-                    pushFollow(FOLLOW_ruleCloseWait_in_ruleStateFulMatchStates2326);
-                    lv_name_0_6=ruleCloseWait();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getCloseWaitParserRuleCall_5()); 
+                        
+                    pushFollow(FOLLOW_ruleCloseWait_in_ruleStateFulMatchStates2398);
+                    this_CloseWait_5=ruleCloseWait();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_6, 
-                            		"CloseWait");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_CloseWait_5);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 7 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1170:8: lv_name_0_7= ruleLastAck
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1150:5: this_LastAck_6= ruleLastAck
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameLastAckParserRuleCall_0_6()); 
-                    	    
-                    pushFollow(FOLLOW_ruleLastAck_in_ruleStateFulMatchStates2345);
-                    lv_name_0_7=ruleLastAck();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getLastAckParserRuleCall_6()); 
+                        
+                    pushFollow(FOLLOW_ruleLastAck_in_ruleStateFulMatchStates2431);
+                    this_LastAck_6=ruleLastAck();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_7, 
-                            		"LastAck");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_LastAck_6);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 8 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1185:8: lv_name_0_8= ruleTimeWait
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1162:5: this_TimeWait_7= ruleTimeWait
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameTimeWaitParserRuleCall_0_7()); 
-                    	    
-                    pushFollow(FOLLOW_ruleTimeWait_in_ruleStateFulMatchStates2364);
-                    lv_name_0_8=ruleTimeWait();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getTimeWaitParserRuleCall_7()); 
+                        
+                    pushFollow(FOLLOW_ruleTimeWait_in_ruleStateFulMatchStates2464);
+                    this_TimeWait_7=ruleTimeWait();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_8, 
-                            		"TimeWait");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_TimeWait_7);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
                 case 9 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1200:8: lv_name_0_9= ruleClose
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1174:5: this_Close_8= ruleClose
                     {
                      
-                    	        newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getNameCloseParserRuleCall_0_8()); 
-                    	    
-                    pushFollow(FOLLOW_ruleClose_in_ruleStateFulMatchStates2383);
-                    lv_name_0_9=ruleClose();
+                            newCompositeNode(grammarAccess.getStateFulMatchStatesAccess().getCloseParserRuleCall_8()); 
+                        
+                    pushFollow(FOLLOW_ruleClose_in_ruleStateFulMatchStates2497);
+                    this_Close_8=ruleClose();
 
                     state._fsp--;
 
 
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getStateFulMatchStatesRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"name",
-                            		lv_name_0_9, 
-                            		"Close");
-                    	        afterParserOrEnumRuleCall();
-                    	    
+                    		current.merge(this_Close_8);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
-
-            }
-
-
-            }
-
 
             }
 
@@ -3042,25 +2987,25 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNormalMatchStates"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1226:1: entryRuleNormalMatchStates returns [EObject current=null] : iv_ruleNormalMatchStates= ruleNormalMatchStates EOF ;
-    public final EObject entryRuleNormalMatchStates() throws RecognitionException {
-        EObject current = null;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1192:1: entryRuleNormalMatchStates returns [String current=null] : iv_ruleNormalMatchStates= ruleNormalMatchStates EOF ;
+    public final String entryRuleNormalMatchStates() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleNormalMatchStates = null;
+        AntlrDatatypeRuleToken iv_ruleNormalMatchStates = null;
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1227:2: (iv_ruleNormalMatchStates= ruleNormalMatchStates EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1228:2: iv_ruleNormalMatchStates= ruleNormalMatchStates EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1193:2: (iv_ruleNormalMatchStates= ruleNormalMatchStates EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1194:2: iv_ruleNormalMatchStates= ruleNormalMatchStates EOF
             {
              newCompositeNode(grammarAccess.getNormalMatchStatesRule()); 
-            pushFollow(FOLLOW_ruleNormalMatchStates_in_entryRuleNormalMatchStates2421);
+            pushFollow(FOLLOW_ruleNormalMatchStates_in_entryRuleNormalMatchStates2543);
             iv_ruleNormalMatchStates=ruleNormalMatchStates();
 
             state._fsp--;
 
-             current =iv_ruleNormalMatchStates; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNormalMatchStates2431); 
+             current =iv_ruleNormalMatchStates.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNormalMatchStates2554); 
 
             }
 
@@ -3078,50 +3023,33 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNormalMatchStates"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1235:1: ruleNormalMatchStates returns [EObject current=null] : ( (lv_name_0_0= ruleNew ) ) ;
-    public final EObject ruleNormalMatchStates() throws RecognitionException {
-        EObject current = null;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1201:1: ruleNormalMatchStates returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_New_0= ruleNew ;
+    public final AntlrDatatypeRuleToken ruleNormalMatchStates() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        AntlrDatatypeRuleToken lv_name_0_0 = null;
+        AntlrDatatypeRuleToken this_New_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1238:28: ( ( (lv_name_0_0= ruleNew ) ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1239:1: ( (lv_name_0_0= ruleNew ) )
-            {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1239:1: ( (lv_name_0_0= ruleNew ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1240:1: (lv_name_0_0= ruleNew )
-            {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1240:1: (lv_name_0_0= ruleNew )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1241:3: lv_name_0_0= ruleNew
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1204:28: (this_New_0= ruleNew )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1206:5: this_New_0= ruleNew
             {
              
-            	        newCompositeNode(grammarAccess.getNormalMatchStatesAccess().getNameNewParserRuleCall_0()); 
-            	    
-            pushFollow(FOLLOW_ruleNew_in_ruleNormalMatchStates2476);
-            lv_name_0_0=ruleNew();
+                    newCompositeNode(grammarAccess.getNormalMatchStatesAccess().getNewParserRuleCall()); 
+                
+            pushFollow(FOLLOW_ruleNew_in_ruleNormalMatchStates2600);
+            this_New_0=ruleNew();
 
             state._fsp--;
 
 
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getNormalMatchStatesRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"name",
-                    		lv_name_0_0, 
-                    		"New");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
+            		current.merge(this_New_0);
+                
+             
+                    afterParserOrEnumRuleCall();
+                
 
             }
 
@@ -3140,7 +3068,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNew"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1265:1: entryRuleNew returns [String current=null] : iv_ruleNew= ruleNew EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1224:1: entryRuleNew returns [String current=null] : iv_ruleNew= ruleNew EOF ;
     public final String entryRuleNew() throws RecognitionException {
         String current = null;
 
@@ -3148,17 +3076,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1266:2: (iv_ruleNew= ruleNew EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1267:2: iv_ruleNew= ruleNew EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1225:2: (iv_ruleNew= ruleNew EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1226:2: iv_ruleNew= ruleNew EOF
             {
              newCompositeNode(grammarAccess.getNewRule()); 
-            pushFollow(FOLLOW_ruleNew_in_entryRuleNew2512);
+            pushFollow(FOLLOW_ruleNew_in_entryRuleNew2645);
             iv_ruleNew=ruleNew();
 
             state._fsp--;
 
              current =iv_ruleNew.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNew2523); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNew2656); 
 
             }
 
@@ -3176,7 +3104,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNew"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1274:1: ruleNew returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NEW' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1233:1: ruleNew returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NEW' ;
     public final AntlrDatatypeRuleToken ruleNew() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3185,10 +3113,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1277:28: (kw= 'NEW' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1279:2: kw= 'NEW'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1236:28: (kw= 'NEW' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1238:2: kw= 'NEW'
             {
-            kw=(Token)match(input,34,FOLLOW_34_in_ruleNew2560); 
+            kw=(Token)match(input,34,FOLLOW_34_in_ruleNew2693); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getNewAccess().getNEWKeyword()); 
@@ -3211,7 +3139,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNoneS"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1292:1: entryRuleNoneS returns [String current=null] : iv_ruleNoneS= ruleNoneS EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1251:1: entryRuleNoneS returns [String current=null] : iv_ruleNoneS= ruleNoneS EOF ;
     public final String entryRuleNoneS() throws RecognitionException {
         String current = null;
 
@@ -3219,17 +3147,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1293:2: (iv_ruleNoneS= ruleNoneS EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1294:2: iv_ruleNoneS= ruleNoneS EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1252:2: (iv_ruleNoneS= ruleNoneS EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1253:2: iv_ruleNoneS= ruleNoneS EOF
             {
              newCompositeNode(grammarAccess.getNoneSRule()); 
-            pushFollow(FOLLOW_ruleNoneS_in_entryRuleNoneS2600);
+            pushFollow(FOLLOW_ruleNoneS_in_entryRuleNoneS2733);
             iv_ruleNoneS=ruleNoneS();
 
             state._fsp--;
 
              current =iv_ruleNoneS.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNoneS2611); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNoneS2744); 
 
             }
 
@@ -3247,7 +3175,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNoneS"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1301:1: ruleNoneS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NONE' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1260:1: ruleNoneS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NONE' ;
     public final AntlrDatatypeRuleToken ruleNoneS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3256,10 +3184,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1304:28: (kw= 'NONE' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1306:2: kw= 'NONE'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1263:28: (kw= 'NONE' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1265:2: kw= 'NONE'
             {
-            kw=(Token)match(input,35,FOLLOW_35_in_ruleNoneS2648); 
+            kw=(Token)match(input,35,FOLLOW_35_in_ruleNoneS2781); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getNoneSAccess().getNONEKeyword()); 
@@ -3282,7 +3210,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSynSent"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1319:1: entryRuleSynSent returns [String current=null] : iv_ruleSynSent= ruleSynSent EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1278:1: entryRuleSynSent returns [String current=null] : iv_ruleSynSent= ruleSynSent EOF ;
     public final String entryRuleSynSent() throws RecognitionException {
         String current = null;
 
@@ -3290,17 +3218,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1320:2: (iv_ruleSynSent= ruleSynSent EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1321:2: iv_ruleSynSent= ruleSynSent EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1279:2: (iv_ruleSynSent= ruleSynSent EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1280:2: iv_ruleSynSent= ruleSynSent EOF
             {
              newCompositeNode(grammarAccess.getSynSentRule()); 
-            pushFollow(FOLLOW_ruleSynSent_in_entryRuleSynSent2688);
+            pushFollow(FOLLOW_ruleSynSent_in_entryRuleSynSent2821);
             iv_ruleSynSent=ruleSynSent();
 
             state._fsp--;
 
              current =iv_ruleSynSent.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSynSent2699); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSynSent2832); 
 
             }
 
@@ -3318,7 +3246,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSynSent"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1328:1: ruleSynSent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'SYN_SENT' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1287:1: ruleSynSent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'SYN_SENT' ;
     public final AntlrDatatypeRuleToken ruleSynSent() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3327,10 +3255,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1331:28: (kw= 'SYN_SENT' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1333:2: kw= 'SYN_SENT'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1290:28: (kw= 'SYN_SENT' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1292:2: kw= 'SYN_SENT'
             {
-            kw=(Token)match(input,36,FOLLOW_36_in_ruleSynSent2736); 
+            kw=(Token)match(input,36,FOLLOW_36_in_ruleSynSent2869); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getSynSentAccess().getSYN_SENTKeyword()); 
@@ -3353,7 +3281,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSynRecv"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1346:1: entryRuleSynRecv returns [String current=null] : iv_ruleSynRecv= ruleSynRecv EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1305:1: entryRuleSynRecv returns [String current=null] : iv_ruleSynRecv= ruleSynRecv EOF ;
     public final String entryRuleSynRecv() throws RecognitionException {
         String current = null;
 
@@ -3361,17 +3289,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1347:2: (iv_ruleSynRecv= ruleSynRecv EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1348:2: iv_ruleSynRecv= ruleSynRecv EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1306:2: (iv_ruleSynRecv= ruleSynRecv EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1307:2: iv_ruleSynRecv= ruleSynRecv EOF
             {
              newCompositeNode(grammarAccess.getSynRecvRule()); 
-            pushFollow(FOLLOW_ruleSynRecv_in_entryRuleSynRecv2776);
+            pushFollow(FOLLOW_ruleSynRecv_in_entryRuleSynRecv2909);
             iv_ruleSynRecv=ruleSynRecv();
 
             state._fsp--;
 
              current =iv_ruleSynRecv.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSynRecv2787); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSynRecv2920); 
 
             }
 
@@ -3389,7 +3317,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSynRecv"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1355:1: ruleSynRecv returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'SYN_RECV' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1314:1: ruleSynRecv returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'SYN_RECV' ;
     public final AntlrDatatypeRuleToken ruleSynRecv() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3398,10 +3326,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1358:28: (kw= 'SYN_RECV' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1360:2: kw= 'SYN_RECV'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1317:28: (kw= 'SYN_RECV' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1319:2: kw= 'SYN_RECV'
             {
-            kw=(Token)match(input,37,FOLLOW_37_in_ruleSynRecv2824); 
+            kw=(Token)match(input,37,FOLLOW_37_in_ruleSynRecv2957); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getSynRecvAccess().getSYN_RECVKeyword()); 
@@ -3424,7 +3352,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEstablished"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1373:1: entryRuleEstablished returns [String current=null] : iv_ruleEstablished= ruleEstablished EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1332:1: entryRuleEstablished returns [String current=null] : iv_ruleEstablished= ruleEstablished EOF ;
     public final String entryRuleEstablished() throws RecognitionException {
         String current = null;
 
@@ -3432,17 +3360,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1374:2: (iv_ruleEstablished= ruleEstablished EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1375:2: iv_ruleEstablished= ruleEstablished EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1333:2: (iv_ruleEstablished= ruleEstablished EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1334:2: iv_ruleEstablished= ruleEstablished EOF
             {
              newCompositeNode(grammarAccess.getEstablishedRule()); 
-            pushFollow(FOLLOW_ruleEstablished_in_entryRuleEstablished2864);
+            pushFollow(FOLLOW_ruleEstablished_in_entryRuleEstablished2997);
             iv_ruleEstablished=ruleEstablished();
 
             state._fsp--;
 
              current =iv_ruleEstablished.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEstablished2875); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEstablished3008); 
 
             }
 
@@ -3460,7 +3388,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEstablished"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1382:1: ruleEstablished returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ESTABLISHED' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1341:1: ruleEstablished returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ESTABLISHED' ;
     public final AntlrDatatypeRuleToken ruleEstablished() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3469,10 +3397,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1385:28: (kw= 'ESTABLISHED' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1387:2: kw= 'ESTABLISHED'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1344:28: (kw= 'ESTABLISHED' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1346:2: kw= 'ESTABLISHED'
             {
-            kw=(Token)match(input,38,FOLLOW_38_in_ruleEstablished2912); 
+            kw=(Token)match(input,38,FOLLOW_38_in_ruleEstablished3045); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getEstablishedAccess().getESTABLISHEDKeyword()); 
@@ -3495,7 +3423,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFinWait"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1400:1: entryRuleFinWait returns [String current=null] : iv_ruleFinWait= ruleFinWait EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1359:1: entryRuleFinWait returns [String current=null] : iv_ruleFinWait= ruleFinWait EOF ;
     public final String entryRuleFinWait() throws RecognitionException {
         String current = null;
 
@@ -3503,17 +3431,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1401:2: (iv_ruleFinWait= ruleFinWait EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1402:2: iv_ruleFinWait= ruleFinWait EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1360:2: (iv_ruleFinWait= ruleFinWait EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1361:2: iv_ruleFinWait= ruleFinWait EOF
             {
              newCompositeNode(grammarAccess.getFinWaitRule()); 
-            pushFollow(FOLLOW_ruleFinWait_in_entryRuleFinWait2952);
+            pushFollow(FOLLOW_ruleFinWait_in_entryRuleFinWait3085);
             iv_ruleFinWait=ruleFinWait();
 
             state._fsp--;
 
              current =iv_ruleFinWait.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFinWait2963); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFinWait3096); 
 
             }
 
@@ -3531,7 +3459,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFinWait"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1409:1: ruleFinWait returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'FIN_WAIT' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1368:1: ruleFinWait returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'FIN_WAIT' ;
     public final AntlrDatatypeRuleToken ruleFinWait() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3540,10 +3468,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1412:28: (kw= 'FIN_WAIT' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1414:2: kw= 'FIN_WAIT'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1371:28: (kw= 'FIN_WAIT' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1373:2: kw= 'FIN_WAIT'
             {
-            kw=(Token)match(input,39,FOLLOW_39_in_ruleFinWait3000); 
+            kw=(Token)match(input,39,FOLLOW_39_in_ruleFinWait3133); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFinWaitAccess().getFIN_WAITKeyword()); 
@@ -3566,7 +3494,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCloseWait"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1427:1: entryRuleCloseWait returns [String current=null] : iv_ruleCloseWait= ruleCloseWait EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1386:1: entryRuleCloseWait returns [String current=null] : iv_ruleCloseWait= ruleCloseWait EOF ;
     public final String entryRuleCloseWait() throws RecognitionException {
         String current = null;
 
@@ -3574,17 +3502,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1428:2: (iv_ruleCloseWait= ruleCloseWait EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1429:2: iv_ruleCloseWait= ruleCloseWait EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1387:2: (iv_ruleCloseWait= ruleCloseWait EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1388:2: iv_ruleCloseWait= ruleCloseWait EOF
             {
              newCompositeNode(grammarAccess.getCloseWaitRule()); 
-            pushFollow(FOLLOW_ruleCloseWait_in_entryRuleCloseWait3040);
+            pushFollow(FOLLOW_ruleCloseWait_in_entryRuleCloseWait3173);
             iv_ruleCloseWait=ruleCloseWait();
 
             state._fsp--;
 
              current =iv_ruleCloseWait.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCloseWait3051); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCloseWait3184); 
 
             }
 
@@ -3602,7 +3530,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCloseWait"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1436:1: ruleCloseWait returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CLOSE_WAIT' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1395:1: ruleCloseWait returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CLOSE_WAIT' ;
     public final AntlrDatatypeRuleToken ruleCloseWait() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3611,10 +3539,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1439:28: (kw= 'CLOSE_WAIT' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1441:2: kw= 'CLOSE_WAIT'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1398:28: (kw= 'CLOSE_WAIT' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1400:2: kw= 'CLOSE_WAIT'
             {
-            kw=(Token)match(input,40,FOLLOW_40_in_ruleCloseWait3088); 
+            kw=(Token)match(input,40,FOLLOW_40_in_ruleCloseWait3221); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getCloseWaitAccess().getCLOSE_WAITKeyword()); 
@@ -3637,7 +3565,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLastAck"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1454:1: entryRuleLastAck returns [String current=null] : iv_ruleLastAck= ruleLastAck EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1413:1: entryRuleLastAck returns [String current=null] : iv_ruleLastAck= ruleLastAck EOF ;
     public final String entryRuleLastAck() throws RecognitionException {
         String current = null;
 
@@ -3645,17 +3573,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1455:2: (iv_ruleLastAck= ruleLastAck EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1456:2: iv_ruleLastAck= ruleLastAck EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1414:2: (iv_ruleLastAck= ruleLastAck EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1415:2: iv_ruleLastAck= ruleLastAck EOF
             {
              newCompositeNode(grammarAccess.getLastAckRule()); 
-            pushFollow(FOLLOW_ruleLastAck_in_entryRuleLastAck3128);
+            pushFollow(FOLLOW_ruleLastAck_in_entryRuleLastAck3261);
             iv_ruleLastAck=ruleLastAck();
 
             state._fsp--;
 
              current =iv_ruleLastAck.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLastAck3139); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLastAck3272); 
 
             }
 
@@ -3673,7 +3601,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLastAck"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1463:1: ruleLastAck returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'LAST_ACK' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1422:1: ruleLastAck returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'LAST_ACK' ;
     public final AntlrDatatypeRuleToken ruleLastAck() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3682,10 +3610,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1466:28: (kw= 'LAST_ACK' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1468:2: kw= 'LAST_ACK'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1425:28: (kw= 'LAST_ACK' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1427:2: kw= 'LAST_ACK'
             {
-            kw=(Token)match(input,41,FOLLOW_41_in_ruleLastAck3176); 
+            kw=(Token)match(input,41,FOLLOW_41_in_ruleLastAck3309); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getLastAckAccess().getLAST_ACKKeyword()); 
@@ -3708,7 +3636,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTimeWait"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1481:1: entryRuleTimeWait returns [String current=null] : iv_ruleTimeWait= ruleTimeWait EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1440:1: entryRuleTimeWait returns [String current=null] : iv_ruleTimeWait= ruleTimeWait EOF ;
     public final String entryRuleTimeWait() throws RecognitionException {
         String current = null;
 
@@ -3716,17 +3644,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1482:2: (iv_ruleTimeWait= ruleTimeWait EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1483:2: iv_ruleTimeWait= ruleTimeWait EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1441:2: (iv_ruleTimeWait= ruleTimeWait EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1442:2: iv_ruleTimeWait= ruleTimeWait EOF
             {
              newCompositeNode(grammarAccess.getTimeWaitRule()); 
-            pushFollow(FOLLOW_ruleTimeWait_in_entryRuleTimeWait3216);
+            pushFollow(FOLLOW_ruleTimeWait_in_entryRuleTimeWait3349);
             iv_ruleTimeWait=ruleTimeWait();
 
             state._fsp--;
 
              current =iv_ruleTimeWait.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTimeWait3227); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTimeWait3360); 
 
             }
 
@@ -3744,7 +3672,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeWait"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1490:1: ruleTimeWait returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'TIME_WAIT' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1449:1: ruleTimeWait returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'TIME_WAIT' ;
     public final AntlrDatatypeRuleToken ruleTimeWait() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3753,10 +3681,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1493:28: (kw= 'TIME_WAIT' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1495:2: kw= 'TIME_WAIT'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1452:28: (kw= 'TIME_WAIT' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1454:2: kw= 'TIME_WAIT'
             {
-            kw=(Token)match(input,42,FOLLOW_42_in_ruleTimeWait3264); 
+            kw=(Token)match(input,42,FOLLOW_42_in_ruleTimeWait3397); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTimeWaitAccess().getTIME_WAITKeyword()); 
@@ -3779,7 +3707,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClose"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1508:1: entryRuleClose returns [String current=null] : iv_ruleClose= ruleClose EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1467:1: entryRuleClose returns [String current=null] : iv_ruleClose= ruleClose EOF ;
     public final String entryRuleClose() throws RecognitionException {
         String current = null;
 
@@ -3787,17 +3715,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1509:2: (iv_ruleClose= ruleClose EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1510:2: iv_ruleClose= ruleClose EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1468:2: (iv_ruleClose= ruleClose EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1469:2: iv_ruleClose= ruleClose EOF
             {
              newCompositeNode(grammarAccess.getCloseRule()); 
-            pushFollow(FOLLOW_ruleClose_in_entryRuleClose3304);
+            pushFollow(FOLLOW_ruleClose_in_entryRuleClose3437);
             iv_ruleClose=ruleClose();
 
             state._fsp--;
 
              current =iv_ruleClose.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClose3315); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClose3448); 
 
             }
 
@@ -3815,7 +3743,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClose"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1517:1: ruleClose returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CLOSE' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1476:1: ruleClose returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CLOSE' ;
     public final AntlrDatatypeRuleToken ruleClose() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3824,10 +3752,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1520:28: (kw= 'CLOSE' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1522:2: kw= 'CLOSE'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1479:28: (kw= 'CLOSE' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1481:2: kw= 'CLOSE'
             {
-            kw=(Token)match(input,43,FOLLOW_43_in_ruleClose3352); 
+            kw=(Token)match(input,43,FOLLOW_43_in_ruleClose3485); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getCloseAccess().getCLOSEKeyword()); 
@@ -3850,7 +3778,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTCPFlag"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1535:1: entryRuleTCPFlag returns [EObject current=null] : iv_ruleTCPFlag= ruleTCPFlag EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1494:1: entryRuleTCPFlag returns [EObject current=null] : iv_ruleTCPFlag= ruleTCPFlag EOF ;
     public final EObject entryRuleTCPFlag() throws RecognitionException {
         EObject current = null;
 
@@ -3858,17 +3786,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1536:2: (iv_ruleTCPFlag= ruleTCPFlag EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1537:2: iv_ruleTCPFlag= ruleTCPFlag EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1495:2: (iv_ruleTCPFlag= ruleTCPFlag EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1496:2: iv_ruleTCPFlag= ruleTCPFlag EOF
             {
              newCompositeNode(grammarAccess.getTCPFlagRule()); 
-            pushFollow(FOLLOW_ruleTCPFlag_in_entryRuleTCPFlag3391);
+            pushFollow(FOLLOW_ruleTCPFlag_in_entryRuleTCPFlag3524);
             iv_ruleTCPFlag=ruleTCPFlag();
 
             state._fsp--;
 
              current =iv_ruleTCPFlag; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTCPFlag3401); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTCPFlag3534); 
 
             }
 
@@ -3886,7 +3814,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTCPFlag"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1544:1: ruleTCPFlag returns [EObject current=null] : ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone ) ) ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1503:1: ruleTCPFlag returns [EObject current=null] : ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg ) ) ) ;
     public final EObject ruleTCPFlag() throws RecognitionException {
         EObject current = null;
 
@@ -3902,21 +3830,25 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken lv_name_0_6 = null;
 
+        AntlrDatatypeRuleToken lv_name_0_7 = null;
+
+        AntlrDatatypeRuleToken lv_name_0_8 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1547:28: ( ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone ) ) ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1548:1: ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone ) ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1506:28: ( ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg ) ) ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1507:1: ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg ) ) )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1548:1: ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone ) ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1549:1: ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1507:1: ( ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg ) ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1508:1: ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg ) )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1549:1: ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1550:1: (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1508:1: ( (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1509:1: (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1550:1: (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone )
-            int alt27=6;
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1509:1: (lv_name_0_1= ruleSyn | lv_name_0_2= ruleAck | lv_name_0_3= ruleFin | lv_name_0_4= ruleRst | lv_name_0_5= ruleAll | lv_name_0_6= ruleNone | lv_name_0_7= rulePsh | lv_name_0_8= ruleUrg )
+            int alt27=8;
             switch ( input.LA(1) ) {
             case 44:
                 {
@@ -3948,6 +3880,16 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                 alt27=6;
                 }
                 break;
+            case 49:
+                {
+                alt27=7;
+                }
+                break;
+            case 50:
+                {
+                alt27=8;
+                }
+                break;
             default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 27, 0, input);
@@ -3957,12 +3899,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
             switch (alt27) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1551:3: lv_name_0_1= ruleSyn
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1510:3: lv_name_0_1= ruleSyn
                     {
                      
                     	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNameSynParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSyn_in_ruleTCPFlag3448);
+                    pushFollow(FOLLOW_ruleSyn_in_ruleTCPFlag3581);
                     lv_name_0_1=ruleSyn();
 
                     state._fsp--;
@@ -3982,12 +3924,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1566:8: lv_name_0_2= ruleAck
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1525:8: lv_name_0_2= ruleAck
                     {
                      
                     	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNameAckParserRuleCall_0_1()); 
                     	    
-                    pushFollow(FOLLOW_ruleAck_in_ruleTCPFlag3467);
+                    pushFollow(FOLLOW_ruleAck_in_ruleTCPFlag3600);
                     lv_name_0_2=ruleAck();
 
                     state._fsp--;
@@ -4007,12 +3949,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1581:8: lv_name_0_3= ruleFin
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1540:8: lv_name_0_3= ruleFin
                     {
                      
                     	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNameFinParserRuleCall_0_2()); 
                     	    
-                    pushFollow(FOLLOW_ruleFin_in_ruleTCPFlag3486);
+                    pushFollow(FOLLOW_ruleFin_in_ruleTCPFlag3619);
                     lv_name_0_3=ruleFin();
 
                     state._fsp--;
@@ -4032,12 +3974,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1596:8: lv_name_0_4= ruleRst
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1555:8: lv_name_0_4= ruleRst
                     {
                      
                     	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNameRstParserRuleCall_0_3()); 
                     	    
-                    pushFollow(FOLLOW_ruleRst_in_ruleTCPFlag3505);
+                    pushFollow(FOLLOW_ruleRst_in_ruleTCPFlag3638);
                     lv_name_0_4=ruleRst();
 
                     state._fsp--;
@@ -4057,12 +3999,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1611:8: lv_name_0_5= ruleAll
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1570:8: lv_name_0_5= ruleAll
                     {
                      
                     	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNameAllParserRuleCall_0_4()); 
                     	    
-                    pushFollow(FOLLOW_ruleAll_in_ruleTCPFlag3524);
+                    pushFollow(FOLLOW_ruleAll_in_ruleTCPFlag3657);
                     lv_name_0_5=ruleAll();
 
                     state._fsp--;
@@ -4082,12 +4024,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1626:8: lv_name_0_6= ruleNone
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1585:8: lv_name_0_6= ruleNone
                     {
                      
                     	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNameNoneParserRuleCall_0_5()); 
                     	    
-                    pushFollow(FOLLOW_ruleNone_in_ruleTCPFlag3543);
+                    pushFollow(FOLLOW_ruleNone_in_ruleTCPFlag3676);
                     lv_name_0_6=ruleNone();
 
                     state._fsp--;
@@ -4101,6 +4043,56 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                            			"name",
                             		lv_name_0_6, 
                             		"None");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+                    break;
+                case 7 :
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1600:8: lv_name_0_7= rulePsh
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNamePshParserRuleCall_0_6()); 
+                    	    
+                    pushFollow(FOLLOW_rulePsh_in_ruleTCPFlag3695);
+                    lv_name_0_7=rulePsh();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getTCPFlagRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"name",
+                            		lv_name_0_7, 
+                            		"Psh");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+                    break;
+                case 8 :
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1615:8: lv_name_0_8= ruleUrg
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getTCPFlagAccess().getNameUrgParserRuleCall_0_7()); 
+                    	    
+                    pushFollow(FOLLOW_ruleUrg_in_ruleTCPFlag3714);
+                    lv_name_0_8=ruleUrg();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getTCPFlagRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"name",
+                            		lv_name_0_8, 
+                            		"Urg");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -4133,7 +4125,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSyn"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1652:1: entryRuleSyn returns [String current=null] : iv_ruleSyn= ruleSyn EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1641:1: entryRuleSyn returns [String current=null] : iv_ruleSyn= ruleSyn EOF ;
     public final String entryRuleSyn() throws RecognitionException {
         String current = null;
 
@@ -4141,17 +4133,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1653:2: (iv_ruleSyn= ruleSyn EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1654:2: iv_ruleSyn= ruleSyn EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1642:2: (iv_ruleSyn= ruleSyn EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1643:2: iv_ruleSyn= ruleSyn EOF
             {
              newCompositeNode(grammarAccess.getSynRule()); 
-            pushFollow(FOLLOW_ruleSyn_in_entryRuleSyn3582);
+            pushFollow(FOLLOW_ruleSyn_in_entryRuleSyn3753);
             iv_ruleSyn=ruleSyn();
 
             state._fsp--;
 
              current =iv_ruleSyn.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSyn3593); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSyn3764); 
 
             }
 
@@ -4169,7 +4161,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSyn"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1661:1: ruleSyn returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'SYN' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1650:1: ruleSyn returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'SYN' ;
     public final AntlrDatatypeRuleToken ruleSyn() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4178,10 +4170,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1664:28: (kw= 'SYN' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1666:2: kw= 'SYN'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1653:28: (kw= 'SYN' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1655:2: kw= 'SYN'
             {
-            kw=(Token)match(input,44,FOLLOW_44_in_ruleSyn3630); 
+            kw=(Token)match(input,44,FOLLOW_44_in_ruleSyn3801); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getSynAccess().getSYNKeyword()); 
@@ -4204,7 +4196,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAck"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1679:1: entryRuleAck returns [String current=null] : iv_ruleAck= ruleAck EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1668:1: entryRuleAck returns [String current=null] : iv_ruleAck= ruleAck EOF ;
     public final String entryRuleAck() throws RecognitionException {
         String current = null;
 
@@ -4212,17 +4204,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1680:2: (iv_ruleAck= ruleAck EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1681:2: iv_ruleAck= ruleAck EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1669:2: (iv_ruleAck= ruleAck EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1670:2: iv_ruleAck= ruleAck EOF
             {
              newCompositeNode(grammarAccess.getAckRule()); 
-            pushFollow(FOLLOW_ruleAck_in_entryRuleAck3670);
+            pushFollow(FOLLOW_ruleAck_in_entryRuleAck3841);
             iv_ruleAck=ruleAck();
 
             state._fsp--;
 
              current =iv_ruleAck.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAck3681); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAck3852); 
 
             }
 
@@ -4240,7 +4232,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAck"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1688:1: ruleAck returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ACK' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1677:1: ruleAck returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ACK' ;
     public final AntlrDatatypeRuleToken ruleAck() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4249,10 +4241,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1691:28: (kw= 'ACK' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1693:2: kw= 'ACK'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1680:28: (kw= 'ACK' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1682:2: kw= 'ACK'
             {
-            kw=(Token)match(input,45,FOLLOW_45_in_ruleAck3718); 
+            kw=(Token)match(input,45,FOLLOW_45_in_ruleAck3889); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getAckAccess().getACKKeyword()); 
@@ -4275,7 +4267,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFin"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1706:1: entryRuleFin returns [String current=null] : iv_ruleFin= ruleFin EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1695:1: entryRuleFin returns [String current=null] : iv_ruleFin= ruleFin EOF ;
     public final String entryRuleFin() throws RecognitionException {
         String current = null;
 
@@ -4283,17 +4275,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1707:2: (iv_ruleFin= ruleFin EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1708:2: iv_ruleFin= ruleFin EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1696:2: (iv_ruleFin= ruleFin EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1697:2: iv_ruleFin= ruleFin EOF
             {
              newCompositeNode(grammarAccess.getFinRule()); 
-            pushFollow(FOLLOW_ruleFin_in_entryRuleFin3758);
+            pushFollow(FOLLOW_ruleFin_in_entryRuleFin3929);
             iv_ruleFin=ruleFin();
 
             state._fsp--;
 
              current =iv_ruleFin.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFin3769); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFin3940); 
 
             }
 
@@ -4311,7 +4303,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFin"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1715:1: ruleFin returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'FIN' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1704:1: ruleFin returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'FIN' ;
     public final AntlrDatatypeRuleToken ruleFin() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4320,10 +4312,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1718:28: (kw= 'FIN' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1720:2: kw= 'FIN'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1707:28: (kw= 'FIN' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1709:2: kw= 'FIN'
             {
-            kw=(Token)match(input,46,FOLLOW_46_in_ruleFin3806); 
+            kw=(Token)match(input,46,FOLLOW_46_in_ruleFin3977); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFinAccess().getFINKeyword()); 
@@ -4346,7 +4338,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRst"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1733:1: entryRuleRst returns [String current=null] : iv_ruleRst= ruleRst EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1722:1: entryRuleRst returns [String current=null] : iv_ruleRst= ruleRst EOF ;
     public final String entryRuleRst() throws RecognitionException {
         String current = null;
 
@@ -4354,17 +4346,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1734:2: (iv_ruleRst= ruleRst EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1735:2: iv_ruleRst= ruleRst EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1723:2: (iv_ruleRst= ruleRst EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1724:2: iv_ruleRst= ruleRst EOF
             {
              newCompositeNode(grammarAccess.getRstRule()); 
-            pushFollow(FOLLOW_ruleRst_in_entryRuleRst3846);
+            pushFollow(FOLLOW_ruleRst_in_entryRuleRst4017);
             iv_ruleRst=ruleRst();
 
             state._fsp--;
 
              current =iv_ruleRst.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRst3857); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRst4028); 
 
             }
 
@@ -4382,7 +4374,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRst"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1742:1: ruleRst returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'RST' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1731:1: ruleRst returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'RST' ;
     public final AntlrDatatypeRuleToken ruleRst() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4391,10 +4383,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1745:28: (kw= 'RST' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1747:2: kw= 'RST'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1734:28: (kw= 'RST' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1736:2: kw= 'RST'
             {
-            kw=(Token)match(input,47,FOLLOW_47_in_ruleRst3894); 
+            kw=(Token)match(input,47,FOLLOW_47_in_ruleRst4065); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getRstAccess().getRSTKeyword()); 
@@ -4417,7 +4409,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAll"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1760:1: entryRuleAll returns [String current=null] : iv_ruleAll= ruleAll EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1749:1: entryRuleAll returns [String current=null] : iv_ruleAll= ruleAll EOF ;
     public final String entryRuleAll() throws RecognitionException {
         String current = null;
 
@@ -4425,17 +4417,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1761:2: (iv_ruleAll= ruleAll EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1762:2: iv_ruleAll= ruleAll EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1750:2: (iv_ruleAll= ruleAll EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1751:2: iv_ruleAll= ruleAll EOF
             {
              newCompositeNode(grammarAccess.getAllRule()); 
-            pushFollow(FOLLOW_ruleAll_in_entryRuleAll3934);
+            pushFollow(FOLLOW_ruleAll_in_entryRuleAll4105);
             iv_ruleAll=ruleAll();
 
             state._fsp--;
 
              current =iv_ruleAll.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAll3945); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAll4116); 
 
             }
 
@@ -4453,7 +4445,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAll"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1769:1: ruleAll returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ALL' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1758:1: ruleAll returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ALL' ;
     public final AntlrDatatypeRuleToken ruleAll() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4462,10 +4454,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1772:28: (kw= 'ALL' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1774:2: kw= 'ALL'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1761:28: (kw= 'ALL' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1763:2: kw= 'ALL'
             {
-            kw=(Token)match(input,48,FOLLOW_48_in_ruleAll3982); 
+            kw=(Token)match(input,48,FOLLOW_48_in_ruleAll4153); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getAllAccess().getALLKeyword()); 
@@ -4488,7 +4480,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNone"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1787:1: entryRuleNone returns [String current=null] : iv_ruleNone= ruleNone EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1776:1: entryRuleNone returns [String current=null] : iv_ruleNone= ruleNone EOF ;
     public final String entryRuleNone() throws RecognitionException {
         String current = null;
 
@@ -4496,17 +4488,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1788:2: (iv_ruleNone= ruleNone EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1789:2: iv_ruleNone= ruleNone EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1777:2: (iv_ruleNone= ruleNone EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1778:2: iv_ruleNone= ruleNone EOF
             {
              newCompositeNode(grammarAccess.getNoneRule()); 
-            pushFollow(FOLLOW_ruleNone_in_entryRuleNone4022);
+            pushFollow(FOLLOW_ruleNone_in_entryRuleNone4193);
             iv_ruleNone=ruleNone();
 
             state._fsp--;
 
              current =iv_ruleNone.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNone4033); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNone4204); 
 
             }
 
@@ -4524,7 +4516,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNone"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1796:1: ruleNone returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NONE' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1785:1: ruleNone returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NONE' ;
     public final AntlrDatatypeRuleToken ruleNone() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4533,10 +4525,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1799:28: (kw= 'NONE' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1801:2: kw= 'NONE'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1788:28: (kw= 'NONE' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1790:2: kw= 'NONE'
             {
-            kw=(Token)match(input,35,FOLLOW_35_in_ruleNone4070); 
+            kw=(Token)match(input,35,FOLLOW_35_in_ruleNone4241); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getNoneAccess().getNONEKeyword()); 
@@ -4558,8 +4550,150 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleNone"
 
 
+    // $ANTLR start "entryRulePsh"
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1803:1: entryRulePsh returns [String current=null] : iv_rulePsh= rulePsh EOF ;
+    public final String entryRulePsh() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_rulePsh = null;
+
+
+        try {
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1804:2: (iv_rulePsh= rulePsh EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1805:2: iv_rulePsh= rulePsh EOF
+            {
+             newCompositeNode(grammarAccess.getPshRule()); 
+            pushFollow(FOLLOW_rulePsh_in_entryRulePsh4281);
+            iv_rulePsh=rulePsh();
+
+            state._fsp--;
+
+             current =iv_rulePsh.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePsh4292); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePsh"
+
+
+    // $ANTLR start "rulePsh"
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1812:1: rulePsh returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'PSH' ;
+    public final AntlrDatatypeRuleToken rulePsh() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1815:28: (kw= 'PSH' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1817:2: kw= 'PSH'
+            {
+            kw=(Token)match(input,49,FOLLOW_49_in_rulePsh4329); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getPshAccess().getPSHKeyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePsh"
+
+
+    // $ANTLR start "entryRuleUrg"
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1830:1: entryRuleUrg returns [String current=null] : iv_ruleUrg= ruleUrg EOF ;
+    public final String entryRuleUrg() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleUrg = null;
+
+
+        try {
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1831:2: (iv_ruleUrg= ruleUrg EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1832:2: iv_ruleUrg= ruleUrg EOF
+            {
+             newCompositeNode(grammarAccess.getUrgRule()); 
+            pushFollow(FOLLOW_ruleUrg_in_entryRuleUrg4369);
+            iv_ruleUrg=ruleUrg();
+
+            state._fsp--;
+
+             current =iv_ruleUrg.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUrg4380); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleUrg"
+
+
+    // $ANTLR start "ruleUrg"
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1839:1: ruleUrg returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'URG' ;
+    public final AntlrDatatypeRuleToken ruleUrg() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1842:28: (kw= 'URG' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1844:2: kw= 'URG'
+            {
+            kw=(Token)match(input,50,FOLLOW_50_in_ruleUrg4417); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getUrgAccess().getURGKeyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleUrg"
+
+
     // $ANTLR start "entryRuleProtocol"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1814:1: entryRuleProtocol returns [String current=null] : iv_ruleProtocol= ruleProtocol EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1857:1: entryRuleProtocol returns [String current=null] : iv_ruleProtocol= ruleProtocol EOF ;
     public final String entryRuleProtocol() throws RecognitionException {
         String current = null;
 
@@ -4567,17 +4701,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1815:2: (iv_ruleProtocol= ruleProtocol EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1816:2: iv_ruleProtocol= ruleProtocol EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1858:2: (iv_ruleProtocol= ruleProtocol EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1859:2: iv_ruleProtocol= ruleProtocol EOF
             {
              newCompositeNode(grammarAccess.getProtocolRule()); 
-            pushFollow(FOLLOW_ruleProtocol_in_entryRuleProtocol4110);
+            pushFollow(FOLLOW_ruleProtocol_in_entryRuleProtocol4457);
             iv_ruleProtocol=ruleProtocol();
 
             state._fsp--;
 
              current =iv_ruleProtocol.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleProtocol4121); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleProtocol4468); 
 
             }
 
@@ -4595,7 +4729,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtocol"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1823:1: ruleProtocol returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1866:1: ruleProtocol returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp ) ;
     public final AntlrDatatypeRuleToken ruleProtocol() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4609,23 +4743,23 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1826:28: ( (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1827:1: (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1869:28: ( (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1870:1: (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1827:1: (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1870:1: (this_Tcp_0= ruleTcp | this_Udp_1= ruleUdp | this_Icmp_2= ruleIcmp )
             int alt28=3;
             switch ( input.LA(1) ) {
-            case 49:
+            case 51:
                 {
                 alt28=1;
                 }
                 break;
-            case 50:
+            case 52:
                 {
                 alt28=2;
                 }
                 break;
-            case 51:
+            case 53:
                 {
                 alt28=3;
                 }
@@ -4639,12 +4773,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
             switch (alt28) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1828:5: this_Tcp_0= ruleTcp
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1871:5: this_Tcp_0= ruleTcp
                     {
                      
                             newCompositeNode(grammarAccess.getProtocolAccess().getTcpParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleTcp_in_ruleProtocol4168);
+                    pushFollow(FOLLOW_ruleTcp_in_ruleProtocol4515);
                     this_Tcp_0=ruleTcp();
 
                     state._fsp--;
@@ -4659,12 +4793,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1840:5: this_Udp_1= ruleUdp
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1883:5: this_Udp_1= ruleUdp
                     {
                      
                             newCompositeNode(grammarAccess.getProtocolAccess().getUdpParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleUdp_in_ruleProtocol4201);
+                    pushFollow(FOLLOW_ruleUdp_in_ruleProtocol4548);
                     this_Udp_1=ruleUdp();
 
                     state._fsp--;
@@ -4679,12 +4813,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1852:5: this_Icmp_2= ruleIcmp
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1895:5: this_Icmp_2= ruleIcmp
                     {
                      
                             newCompositeNode(grammarAccess.getProtocolAccess().getIcmpParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleIcmp_in_ruleProtocol4234);
+                    pushFollow(FOLLOW_ruleIcmp_in_ruleProtocol4581);
                     this_Icmp_2=ruleIcmp();
 
                     state._fsp--;
@@ -4719,7 +4853,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTcp"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1870:1: entryRuleTcp returns [String current=null] : iv_ruleTcp= ruleTcp EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1913:1: entryRuleTcp returns [String current=null] : iv_ruleTcp= ruleTcp EOF ;
     public final String entryRuleTcp() throws RecognitionException {
         String current = null;
 
@@ -4727,17 +4861,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1871:2: (iv_ruleTcp= ruleTcp EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1872:2: iv_ruleTcp= ruleTcp EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1914:2: (iv_ruleTcp= ruleTcp EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1915:2: iv_ruleTcp= ruleTcp EOF
             {
              newCompositeNode(grammarAccess.getTcpRule()); 
-            pushFollow(FOLLOW_ruleTcp_in_entryRuleTcp4280);
+            pushFollow(FOLLOW_ruleTcp_in_entryRuleTcp4627);
             iv_ruleTcp=ruleTcp();
 
             state._fsp--;
 
              current =iv_ruleTcp.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTcp4291); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTcp4638); 
 
             }
 
@@ -4755,7 +4889,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTcp"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1879:1: ruleTcp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'tcp' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1922:1: ruleTcp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'tcp' ;
     public final AntlrDatatypeRuleToken ruleTcp() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4764,10 +4898,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1882:28: (kw= 'tcp' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1884:2: kw= 'tcp'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1925:28: (kw= 'tcp' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1927:2: kw= 'tcp'
             {
-            kw=(Token)match(input,49,FOLLOW_49_in_ruleTcp4328); 
+            kw=(Token)match(input,51,FOLLOW_51_in_ruleTcp4675); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTcpAccess().getTcpKeyword()); 
@@ -4790,7 +4924,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUdp"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1897:1: entryRuleUdp returns [String current=null] : iv_ruleUdp= ruleUdp EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1940:1: entryRuleUdp returns [String current=null] : iv_ruleUdp= ruleUdp EOF ;
     public final String entryRuleUdp() throws RecognitionException {
         String current = null;
 
@@ -4798,17 +4932,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1898:2: (iv_ruleUdp= ruleUdp EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1899:2: iv_ruleUdp= ruleUdp EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1941:2: (iv_ruleUdp= ruleUdp EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1942:2: iv_ruleUdp= ruleUdp EOF
             {
              newCompositeNode(grammarAccess.getUdpRule()); 
-            pushFollow(FOLLOW_ruleUdp_in_entryRuleUdp4368);
+            pushFollow(FOLLOW_ruleUdp_in_entryRuleUdp4715);
             iv_ruleUdp=ruleUdp();
 
             state._fsp--;
 
              current =iv_ruleUdp.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUdp4379); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUdp4726); 
 
             }
 
@@ -4826,7 +4960,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUdp"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1906:1: ruleUdp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'udp' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1949:1: ruleUdp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'udp' ;
     public final AntlrDatatypeRuleToken ruleUdp() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4835,10 +4969,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1909:28: (kw= 'udp' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1911:2: kw= 'udp'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1952:28: (kw= 'udp' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1954:2: kw= 'udp'
             {
-            kw=(Token)match(input,50,FOLLOW_50_in_ruleUdp4416); 
+            kw=(Token)match(input,52,FOLLOW_52_in_ruleUdp4763); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getUdpAccess().getUdpKeyword()); 
@@ -4861,7 +4995,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIcmp"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1924:1: entryRuleIcmp returns [String current=null] : iv_ruleIcmp= ruleIcmp EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1967:1: entryRuleIcmp returns [String current=null] : iv_ruleIcmp= ruleIcmp EOF ;
     public final String entryRuleIcmp() throws RecognitionException {
         String current = null;
 
@@ -4869,17 +5003,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1925:2: (iv_ruleIcmp= ruleIcmp EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1926:2: iv_ruleIcmp= ruleIcmp EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1968:2: (iv_ruleIcmp= ruleIcmp EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1969:2: iv_ruleIcmp= ruleIcmp EOF
             {
              newCompositeNode(grammarAccess.getIcmpRule()); 
-            pushFollow(FOLLOW_ruleIcmp_in_entryRuleIcmp4456);
+            pushFollow(FOLLOW_ruleIcmp_in_entryRuleIcmp4803);
             iv_ruleIcmp=ruleIcmp();
 
             state._fsp--;
 
              current =iv_ruleIcmp.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIcmp4467); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIcmp4814); 
 
             }
 
@@ -4897,7 +5031,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIcmp"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1933:1: ruleIcmp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'icmp' ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1976:1: ruleIcmp returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'icmp' ;
     public final AntlrDatatypeRuleToken ruleIcmp() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4906,10 +5040,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1936:28: (kw= 'icmp' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1938:2: kw= 'icmp'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1979:28: (kw= 'icmp' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1981:2: kw= 'icmp'
             {
-            kw=(Token)match(input,51,FOLLOW_51_in_ruleIcmp4504); 
+            kw=(Token)match(input,53,FOLLOW_53_in_ruleIcmp4851); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getIcmpAccess().getIcmpKeyword()); 
@@ -4932,7 +5066,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTarget"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1951:1: entryRuleTarget returns [String current=null] : iv_ruleTarget= ruleTarget EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1994:1: entryRuleTarget returns [String current=null] : iv_ruleTarget= ruleTarget EOF ;
     public final String entryRuleTarget() throws RecognitionException {
         String current = null;
 
@@ -4940,17 +5074,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1952:2: (iv_ruleTarget= ruleTarget EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1953:2: iv_ruleTarget= ruleTarget EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1995:2: (iv_ruleTarget= ruleTarget EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1996:2: iv_ruleTarget= ruleTarget EOF
             {
              newCompositeNode(grammarAccess.getTargetRule()); 
-            pushFollow(FOLLOW_ruleTarget_in_entryRuleTarget4544);
+            pushFollow(FOLLOW_ruleTarget_in_entryRuleTarget4891);
             iv_ruleTarget=ruleTarget();
 
             state._fsp--;
 
              current =iv_ruleTarget.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTarget4555); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTarget4902); 
 
             }
 
@@ -4968,7 +5102,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTarget"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1960:1: ruleTarget returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2003:1: ruleTarget returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleTarget() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4977,10 +5111,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1963:28: (this_ID_0= RULE_ID )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1964:5: this_ID_0= RULE_ID
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2006:28: (this_ID_0= RULE_ID )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2007:5: this_ID_0= RULE_ID
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTarget4594); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTarget4941); 
 
             		current.merge(this_ID_0);
                 
@@ -5005,7 +5139,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleChain"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1979:1: entryRuleChain returns [EObject current=null] : iv_ruleChain= ruleChain EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2022:1: entryRuleChain returns [EObject current=null] : iv_ruleChain= ruleChain EOF ;
     public final EObject entryRuleChain() throws RecognitionException {
         EObject current = null;
 
@@ -5013,17 +5147,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1980:2: (iv_ruleChain= ruleChain EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1981:2: iv_ruleChain= ruleChain EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2023:2: (iv_ruleChain= ruleChain EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2024:2: iv_ruleChain= ruleChain EOF
             {
              newCompositeNode(grammarAccess.getChainRule()); 
-            pushFollow(FOLLOW_ruleChain_in_entryRuleChain4638);
+            pushFollow(FOLLOW_ruleChain_in_entryRuleChain4985);
             iv_ruleChain=ruleChain();
 
             state._fsp--;
 
              current =iv_ruleChain; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleChain4648); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleChain4995); 
 
             }
 
@@ -5041,7 +5175,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleChain"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1988:1: ruleChain returns [EObject current=null] : ( (lv_chainName_0_0= RULE_ID ) ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2031:1: ruleChain returns [EObject current=null] : ( (lv_chainName_0_0= RULE_ID ) ) ;
     public final EObject ruleChain() throws RecognitionException {
         EObject current = null;
 
@@ -5050,16 +5184,16 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1991:28: ( ( (lv_chainName_0_0= RULE_ID ) ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1992:1: ( (lv_chainName_0_0= RULE_ID ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2034:28: ( ( (lv_chainName_0_0= RULE_ID ) ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2035:1: ( (lv_chainName_0_0= RULE_ID ) )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1992:1: ( (lv_chainName_0_0= RULE_ID ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1993:1: (lv_chainName_0_0= RULE_ID )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2035:1: ( (lv_chainName_0_0= RULE_ID ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2036:1: (lv_chainName_0_0= RULE_ID )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1993:1: (lv_chainName_0_0= RULE_ID )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1994:3: lv_chainName_0_0= RULE_ID
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2036:1: (lv_chainName_0_0= RULE_ID )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2037:3: lv_chainName_0_0= RULE_ID
             {
-            lv_chainName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleChain4689); 
+            lv_chainName_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleChain5036); 
 
             			newLeafNode(lv_chainName_0_0, grammarAccess.getChainAccess().getChainNameIDTerminalRuleCall_0()); 
             		
@@ -5097,7 +5231,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleChainDeclaration"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2020:1: entryRuleChainDeclaration returns [EObject current=null] : iv_ruleChainDeclaration= ruleChainDeclaration EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2063:1: entryRuleChainDeclaration returns [EObject current=null] : iv_ruleChainDeclaration= ruleChainDeclaration EOF ;
     public final EObject entryRuleChainDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -5105,17 +5239,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2021:2: (iv_ruleChainDeclaration= ruleChainDeclaration EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2022:2: iv_ruleChainDeclaration= ruleChainDeclaration EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2064:2: (iv_ruleChainDeclaration= ruleChainDeclaration EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2065:2: iv_ruleChainDeclaration= ruleChainDeclaration EOF
             {
              newCompositeNode(grammarAccess.getChainDeclarationRule()); 
-            pushFollow(FOLLOW_ruleChainDeclaration_in_entryRuleChainDeclaration4731);
+            pushFollow(FOLLOW_ruleChainDeclaration_in_entryRuleChainDeclaration5078);
             iv_ruleChainDeclaration=ruleChainDeclaration();
 
             state._fsp--;
 
              current =iv_ruleChainDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleChainDeclaration4741); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleChainDeclaration5088); 
 
             }
 
@@ -5133,7 +5267,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleChainDeclaration"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2029:1: ruleChainDeclaration returns [EObject current=null] : (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2072:1: ruleChainDeclaration returns [EObject current=null] : (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName ) ;
     public final EObject ruleChainDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -5145,24 +5279,24 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2032:28: ( (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2033:1: (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2075:28: ( (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2076:1: (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2033:1: (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2033:3: otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2076:1: (otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2076:3: otherlv_0= 'iptables' otherlv_1= '-N' this_ChainName_2= ruleChainName
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleChainDeclaration4778); 
+            otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleChainDeclaration5125); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getChainDeclarationAccess().getIptablesKeyword_0());
                 
-            otherlv_1=(Token)match(input,52,FOLLOW_52_in_ruleChainDeclaration4790); 
+            otherlv_1=(Token)match(input,54,FOLLOW_54_in_ruleChainDeclaration5137); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getChainDeclarationAccess().getNKeyword_1());
                 
              
                     newCompositeNode(grammarAccess.getChainDeclarationAccess().getChainNameParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleChainName_in_ruleChainDeclaration4812);
+            pushFollow(FOLLOW_ruleChainName_in_ruleChainDeclaration5159);
             this_ChainName_2=ruleChainName();
 
             state._fsp--;
@@ -5192,7 +5326,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleChainName"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2058:1: entryRuleChainName returns [EObject current=null] : iv_ruleChainName= ruleChainName EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2101:1: entryRuleChainName returns [EObject current=null] : iv_ruleChainName= ruleChainName EOF ;
     public final EObject entryRuleChainName() throws RecognitionException {
         EObject current = null;
 
@@ -5200,17 +5334,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2059:2: (iv_ruleChainName= ruleChainName EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2060:2: iv_ruleChainName= ruleChainName EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2102:2: (iv_ruleChainName= ruleChainName EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2103:2: iv_ruleChainName= ruleChainName EOF
             {
              newCompositeNode(grammarAccess.getChainNameRule()); 
-            pushFollow(FOLLOW_ruleChainName_in_entryRuleChainName4847);
+            pushFollow(FOLLOW_ruleChainName_in_entryRuleChainName5194);
             iv_ruleChainName=ruleChainName();
 
             state._fsp--;
 
              current =iv_ruleChainName; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleChainName4857); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleChainName5204); 
 
             }
 
@@ -5228,7 +5362,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleChainName"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2067:1: ruleChainName returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2110:1: ruleChainName returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleChainName() throws RecognitionException {
         EObject current = null;
 
@@ -5237,16 +5371,16 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2070:28: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2071:1: ( (lv_name_0_0= RULE_ID ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2113:28: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2114:1: ( (lv_name_0_0= RULE_ID ) )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2071:1: ( (lv_name_0_0= RULE_ID ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2072:1: (lv_name_0_0= RULE_ID )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2114:1: ( (lv_name_0_0= RULE_ID ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2115:1: (lv_name_0_0= RULE_ID )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2072:1: (lv_name_0_0= RULE_ID )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2073:3: lv_name_0_0= RULE_ID
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2115:1: (lv_name_0_0= RULE_ID )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2116:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleChainName4898); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleChainName5245); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getChainNameAccess().getNameIDTerminalRuleCall_0()); 
             		
@@ -5284,7 +5418,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIPExpr"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2097:1: entryRuleIPExpr returns [String current=null] : iv_ruleIPExpr= ruleIPExpr EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2140:1: entryRuleIPExpr returns [String current=null] : iv_ruleIPExpr= ruleIPExpr EOF ;
     public final String entryRuleIPExpr() throws RecognitionException {
         String current = null;
 
@@ -5292,17 +5426,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2098:2: (iv_ruleIPExpr= ruleIPExpr EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2099:2: iv_ruleIPExpr= ruleIPExpr EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2141:2: (iv_ruleIPExpr= ruleIPExpr EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2142:2: iv_ruleIPExpr= ruleIPExpr EOF
             {
              newCompositeNode(grammarAccess.getIPExprRule()); 
-            pushFollow(FOLLOW_ruleIPExpr_in_entryRuleIPExpr4939);
+            pushFollow(FOLLOW_ruleIPExpr_in_entryRuleIPExpr5286);
             iv_ruleIPExpr=ruleIPExpr();
 
             state._fsp--;
 
              current =iv_ruleIPExpr.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIPExpr4950); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIPExpr5297); 
 
             }
 
@@ -5320,7 +5454,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIPExpr"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2106:1: ruleIPExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2149:1: ruleIPExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? ) ;
     public final AntlrDatatypeRuleToken ruleIPExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5339,16 +5473,16 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2109:28: ( (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2110:1: (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2152:28: ( (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2153:1: (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2110:1: (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2111:5: this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2153:1: (this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )? )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2154:5: this_ipByteExpr_0= ruleipByteExpr kw= '.' this_ipByteExpr_2= ruleipByteExpr kw= '.' this_ipByteExpr_4= ruleipByteExpr kw= '.' this_ipByteExpr_6= ruleipByteExpr (this_IpRangeExpr_7= ruleIpRangeExpr )?
             {
              
                     newCompositeNode(grammarAccess.getIPExprAccess().getIpByteExprParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr4997);
+            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr5344);
             this_ipByteExpr_0=ruleipByteExpr();
 
             state._fsp--;
@@ -5359,7 +5493,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,53,FOLLOW_53_in_ruleIPExpr5015); 
+            kw=(Token)match(input,55,FOLLOW_55_in_ruleIPExpr5362); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getIPExprAccess().getFullStopKeyword_1()); 
@@ -5367,7 +5501,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getIPExprAccess().getIpByteExprParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr5037);
+            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr5384);
             this_ipByteExpr_2=ruleipByteExpr();
 
             state._fsp--;
@@ -5378,7 +5512,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,53,FOLLOW_53_in_ruleIPExpr5055); 
+            kw=(Token)match(input,55,FOLLOW_55_in_ruleIPExpr5402); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getIPExprAccess().getFullStopKeyword_3()); 
@@ -5386,7 +5520,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getIPExprAccess().getIpByteExprParserRuleCall_4()); 
                 
-            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr5077);
+            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr5424);
             this_ipByteExpr_4=ruleipByteExpr();
 
             state._fsp--;
@@ -5397,7 +5531,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,53,FOLLOW_53_in_ruleIPExpr5095); 
+            kw=(Token)match(input,55,FOLLOW_55_in_ruleIPExpr5442); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getIPExprAccess().getFullStopKeyword_5()); 
@@ -5405,7 +5539,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getIPExprAccess().getIpByteExprParserRuleCall_6()); 
                 
-            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr5117);
+            pushFollow(FOLLOW_ruleipByteExpr_in_ruleIPExpr5464);
             this_ipByteExpr_6=ruleipByteExpr();
 
             state._fsp--;
@@ -5416,21 +5550,21 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2172:1: (this_IpRangeExpr_7= ruleIpRangeExpr )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2215:1: (this_IpRangeExpr_7= ruleIpRangeExpr )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( (LA29_0==54) ) {
+            if ( (LA29_0==56) ) {
                 alt29=1;
             }
             switch (alt29) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2173:5: this_IpRangeExpr_7= ruleIpRangeExpr
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2216:5: this_IpRangeExpr_7= ruleIpRangeExpr
                     {
                      
                             newCompositeNode(grammarAccess.getIPExprAccess().getIpRangeExprParserRuleCall_7()); 
                         
-                    pushFollow(FOLLOW_ruleIpRangeExpr_in_ruleIPExpr5145);
+                    pushFollow(FOLLOW_ruleIpRangeExpr_in_ruleIPExpr5492);
                     this_IpRangeExpr_7=ruleIpRangeExpr();
 
                     state._fsp--;
@@ -5468,7 +5602,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleipByteExpr"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2191:1: entryRuleipByteExpr returns [String current=null] : iv_ruleipByteExpr= ruleipByteExpr EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2234:1: entryRuleipByteExpr returns [String current=null] : iv_ruleipByteExpr= ruleipByteExpr EOF ;
     public final String entryRuleipByteExpr() throws RecognitionException {
         String current = null;
 
@@ -5476,17 +5610,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2192:2: (iv_ruleipByteExpr= ruleipByteExpr EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2193:2: iv_ruleipByteExpr= ruleipByteExpr EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2235:2: (iv_ruleipByteExpr= ruleipByteExpr EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2236:2: iv_ruleipByteExpr= ruleipByteExpr EOF
             {
              newCompositeNode(grammarAccess.getIpByteExprRule()); 
-            pushFollow(FOLLOW_ruleipByteExpr_in_entryRuleipByteExpr5193);
+            pushFollow(FOLLOW_ruleipByteExpr_in_entryRuleipByteExpr5540);
             iv_ruleipByteExpr=ruleipByteExpr();
 
             state._fsp--;
 
              current =iv_ruleipByteExpr.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleipByteExpr5204); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleipByteExpr5551); 
 
             }
 
@@ -5504,7 +5638,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleipByteExpr"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2200:1: ruleipByteExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2243:1: ruleipByteExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleipByteExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5513,10 +5647,10 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2203:28: (this_INT_0= RULE_INT )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2204:5: this_INT_0= RULE_INT
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2246:28: (this_INT_0= RULE_INT )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2247:5: this_INT_0= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleipByteExpr5243); 
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleipByteExpr5590); 
 
             		current.merge(this_INT_0);
                 
@@ -5541,7 +5675,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIpRangeExpr"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2219:1: entryRuleIpRangeExpr returns [String current=null] : iv_ruleIpRangeExpr= ruleIpRangeExpr EOF ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2262:1: entryRuleIpRangeExpr returns [String current=null] : iv_ruleIpRangeExpr= ruleIpRangeExpr EOF ;
     public final String entryRuleIpRangeExpr() throws RecognitionException {
         String current = null;
 
@@ -5549,17 +5683,17 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2220:2: (iv_ruleIpRangeExpr= ruleIpRangeExpr EOF )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2221:2: iv_ruleIpRangeExpr= ruleIpRangeExpr EOF
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2263:2: (iv_ruleIpRangeExpr= ruleIpRangeExpr EOF )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2264:2: iv_ruleIpRangeExpr= ruleIpRangeExpr EOF
             {
              newCompositeNode(grammarAccess.getIpRangeExprRule()); 
-            pushFollow(FOLLOW_ruleIpRangeExpr_in_entryRuleIpRangeExpr5288);
+            pushFollow(FOLLOW_ruleIpRangeExpr_in_entryRuleIpRangeExpr5635);
             iv_ruleIpRangeExpr=ruleIpRangeExpr();
 
             state._fsp--;
 
              current =iv_ruleIpRangeExpr.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIpRangeExpr5299); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIpRangeExpr5646); 
 
             }
 
@@ -5577,7 +5711,7 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIpRangeExpr"
-    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2228:1: ruleIpRangeExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '/' this_INT_1= RULE_INT ) ;
+    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2271:1: ruleIpRangeExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '/' this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleIpRangeExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5587,18 +5721,18 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2231:28: ( (kw= '/' this_INT_1= RULE_INT ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2232:1: (kw= '/' this_INT_1= RULE_INT )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2274:28: ( (kw= '/' this_INT_1= RULE_INT ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2275:1: (kw= '/' this_INT_1= RULE_INT )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2232:1: (kw= '/' this_INT_1= RULE_INT )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2233:2: kw= '/' this_INT_1= RULE_INT
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2275:1: (kw= '/' this_INT_1= RULE_INT )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2276:2: kw= '/' this_INT_1= RULE_INT
             {
-            kw=(Token)match(input,54,FOLLOW_54_in_ruleIpRangeExpr5337); 
+            kw=(Token)match(input,56,FOLLOW_56_in_ruleIpRangeExpr5684); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getIpRangeExprAccess().getSolidusKeyword_0()); 
                 
-            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIpRangeExpr5352); 
+            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIpRangeExpr5699); 
 
             		current.merge(this_INT_1);
                 
@@ -5649,14 +5783,14 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13_in_ruleFilterSpec561 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_14_in_ruleFilterSpec590 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleChain_in_ruleFilterSpec627 = new BitSet(new long[]{0x000000007DFF8020L});
-    public static final BitSet FOLLOW_15_in_ruleFilterSpec640 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleIPExpr_in_ruleFilterSpec661 = new BitSet(new long[]{0x000000007DFF8020L});
-    public static final BitSet FOLLOW_16_in_ruleFilterSpec676 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleInterface_in_ruleFilterSpec697 = new BitSet(new long[]{0x000000007DFF8020L});
-    public static final BitSet FOLLOW_17_in_ruleFilterSpec712 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleIPExpr_in_ruleFilterSpec733 = new BitSet(new long[]{0x000000007DFF8020L});
-    public static final BitSet FOLLOW_18_in_ruleFilterSpec748 = new BitSet(new long[]{0x000E000000000000L});
-    public static final BitSet FOLLOW_ruleProtocol_in_ruleFilterSpec769 = new BitSet(new long[]{0x000000007DFF8020L});
+    public static final BitSet FOLLOW_15_in_ruleFilterSpec640 = new BitSet(new long[]{0x0038000000000000L});
+    public static final BitSet FOLLOW_ruleProtocol_in_ruleFilterSpec661 = new BitSet(new long[]{0x000000007DFF8020L});
+    public static final BitSet FOLLOW_16_in_ruleFilterSpec676 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleIPExpr_in_ruleFilterSpec697 = new BitSet(new long[]{0x000000007DFF8020L});
+    public static final BitSet FOLLOW_17_in_ruleFilterSpec712 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleInterface_in_ruleFilterSpec733 = new BitSet(new long[]{0x000000007DFF8020L});
+    public static final BitSet FOLLOW_18_in_ruleFilterSpec748 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleIPExpr_in_ruleFilterSpec769 = new BitSet(new long[]{0x000000007DFF8020L});
     public static final BitSet FOLLOW_19_in_ruleFilterSpec784 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleFilterSpec801 = new BitSet(new long[]{0x000000007DFF8020L});
     public static final BitSet FOLLOW_20_in_ruleFilterSpec821 = new BitSet(new long[]{0x0000000000000010L});
@@ -5677,12 +5811,12 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleState_in_ruleFilterSpec1123 = new BitSet(new long[]{0x000000007FFF8020L});
     public static final BitSet FOLLOW_25_in_ruleFilterSpec1136 = new BitSet(new long[]{0x00000FFC00000000L});
     public static final BitSet FOLLOW_ruleState_in_ruleFilterSpec1157 = new BitSet(new long[]{0x000000007FFF8020L});
-    public static final BitSet FOLLOW_29_in_ruleFilterSpec1174 = new BitSet(new long[]{0x0001F00800000000L});
-    public static final BitSet FOLLOW_ruleTCPFlag_in_ruleFilterSpec1195 = new BitSet(new long[]{0x0001F00802000000L});
-    public static final BitSet FOLLOW_25_in_ruleFilterSpec1208 = new BitSet(new long[]{0x0001F00800000000L});
-    public static final BitSet FOLLOW_ruleTCPFlag_in_ruleFilterSpec1229 = new BitSet(new long[]{0x0001F00802000000L});
+    public static final BitSet FOLLOW_29_in_ruleFilterSpec1174 = new BitSet(new long[]{0x0007F00800000000L});
+    public static final BitSet FOLLOW_ruleTCPFlag_in_ruleFilterSpec1195 = new BitSet(new long[]{0x0007F00802000000L});
+    public static final BitSet FOLLOW_25_in_ruleFilterSpec1208 = new BitSet(new long[]{0x0007F00800000000L});
+    public static final BitSet FOLLOW_ruleTCPFlag_in_ruleFilterSpec1229 = new BitSet(new long[]{0x0007F00802000000L});
     public static final BitSet FOLLOW_ruleTCPFlag_in_ruleFilterSpec1252 = new BitSet(new long[]{0x000000007FFF8020L});
-    public static final BitSet FOLLOW_25_in_ruleFilterSpec1265 = new BitSet(new long[]{0x0001F00800000000L});
+    public static final BitSet FOLLOW_25_in_ruleFilterSpec1265 = new BitSet(new long[]{0x0007F00800000000L});
     public static final BitSet FOLLOW_ruleTCPFlag_in_ruleFilterSpec1286 = new BitSet(new long[]{0x000000007FFF8020L});
     public static final BitSet FOLLOW_30_in_ruleFilterSpec1303 = new BitSet(new long[]{0x000000007DFF8020L});
     public static final BitSet FOLLOW_ruleTarget_in_ruleFilterSpec1326 = new BitSet(new long[]{0x0000000080000002L});
@@ -5714,120 +5848,128 @@ public class InternalIptablesParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleState2070 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNormalMatchStates_in_ruleState2117 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStateFulMatchStates_in_ruleState2136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStateFulMatchStates_in_entryRuleStateFulMatchStates2174 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStateFulMatchStates2184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNoneS_in_ruleStateFulMatchStates2231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSynSent_in_ruleStateFulMatchStates2250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSynRecv_in_ruleStateFulMatchStates2269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEstablished_in_ruleStateFulMatchStates2288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFinWait_in_ruleStateFulMatchStates2307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCloseWait_in_ruleStateFulMatchStates2326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLastAck_in_ruleStateFulMatchStates2345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimeWait_in_ruleStateFulMatchStates2364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClose_in_ruleStateFulMatchStates2383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNormalMatchStates_in_entryRuleNormalMatchStates2421 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNormalMatchStates2431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNew_in_ruleNormalMatchStates2476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNew_in_entryRuleNew2512 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNew2523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleNew2560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNoneS_in_entryRuleNoneS2600 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNoneS2611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleNoneS2648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSynSent_in_entryRuleSynSent2688 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSynSent2699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleSynSent2736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSynRecv_in_entryRuleSynRecv2776 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSynRecv2787 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleSynRecv2824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEstablished_in_entryRuleEstablished2864 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEstablished2875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleEstablished2912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFinWait_in_entryRuleFinWait2952 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFinWait2963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleFinWait3000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCloseWait_in_entryRuleCloseWait3040 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCloseWait3051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleCloseWait3088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLastAck_in_entryRuleLastAck3128 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLastAck3139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleLastAck3176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimeWait_in_entryRuleTimeWait3216 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTimeWait3227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleTimeWait3264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClose_in_entryRuleClose3304 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClose3315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleClose3352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTCPFlag_in_entryRuleTCPFlag3391 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTCPFlag3401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSyn_in_ruleTCPFlag3448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAck_in_ruleTCPFlag3467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFin_in_ruleTCPFlag3486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRst_in_ruleTCPFlag3505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAll_in_ruleTCPFlag3524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNone_in_ruleTCPFlag3543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSyn_in_entryRuleSyn3582 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSyn3593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleSyn3630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAck_in_entryRuleAck3670 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAck3681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleAck3718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFin_in_entryRuleFin3758 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFin3769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleFin3806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRst_in_entryRuleRst3846 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRst3857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_ruleRst3894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAll_in_entryRuleAll3934 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAll3945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleAll3982 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNone_in_entryRuleNone4022 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNone4033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleNone4070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProtocol_in_entryRuleProtocol4110 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleProtocol4121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTcp_in_ruleProtocol4168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUdp_in_ruleProtocol4201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIcmp_in_ruleProtocol4234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTcp_in_entryRuleTcp4280 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTcp4291 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleTcp4328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUdp_in_entryRuleUdp4368 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUdp4379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleUdp4416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIcmp_in_entryRuleIcmp4456 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIcmp4467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleIcmp4504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTarget_in_entryRuleTarget4544 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTarget4555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTarget4594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChain_in_entryRuleChain4638 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleChain4648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleChain4689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChainDeclaration_in_entryRuleChainDeclaration4731 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleChainDeclaration4741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleChainDeclaration4778 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_52_in_ruleChainDeclaration4790 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleChainName_in_ruleChainDeclaration4812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChainName_in_entryRuleChainName4847 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleChainName4857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleChainName4898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIPExpr_in_entryRuleIPExpr4939 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIPExpr4950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr4997 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_ruleIPExpr5015 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr5037 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_ruleIPExpr5055 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr5077 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_ruleIPExpr5095 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr5117 = new BitSet(new long[]{0x0040000000000002L});
-    public static final BitSet FOLLOW_ruleIpRangeExpr_in_ruleIPExpr5145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleipByteExpr_in_entryRuleipByteExpr5193 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleipByteExpr5204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleipByteExpr5243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIpRangeExpr_in_entryRuleIpRangeExpr5288 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIpRangeExpr5299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleIpRangeExpr5337 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleIpRangeExpr5352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStateFulMatchStates_in_entryRuleStateFulMatchStates2175 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStateFulMatchStates2186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNoneS_in_ruleStateFulMatchStates2233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSynSent_in_ruleStateFulMatchStates2266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSynRecv_in_ruleStateFulMatchStates2299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEstablished_in_ruleStateFulMatchStates2332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFinWait_in_ruleStateFulMatchStates2365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCloseWait_in_ruleStateFulMatchStates2398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLastAck_in_ruleStateFulMatchStates2431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimeWait_in_ruleStateFulMatchStates2464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClose_in_ruleStateFulMatchStates2497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNormalMatchStates_in_entryRuleNormalMatchStates2543 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNormalMatchStates2554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNew_in_ruleNormalMatchStates2600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNew_in_entryRuleNew2645 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNew2656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleNew2693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNoneS_in_entryRuleNoneS2733 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNoneS2744 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleNoneS2781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSynSent_in_entryRuleSynSent2821 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSynSent2832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleSynSent2869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSynRecv_in_entryRuleSynRecv2909 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSynRecv2920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleSynRecv2957 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEstablished_in_entryRuleEstablished2997 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEstablished3008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleEstablished3045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFinWait_in_entryRuleFinWait3085 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFinWait3096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleFinWait3133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCloseWait_in_entryRuleCloseWait3173 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCloseWait3184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleCloseWait3221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLastAck_in_entryRuleLastAck3261 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLastAck3272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleLastAck3309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimeWait_in_entryRuleTimeWait3349 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTimeWait3360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleTimeWait3397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClose_in_entryRuleClose3437 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClose3448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleClose3485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTCPFlag_in_entryRuleTCPFlag3524 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTCPFlag3534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSyn_in_ruleTCPFlag3581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAck_in_ruleTCPFlag3600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFin_in_ruleTCPFlag3619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRst_in_ruleTCPFlag3638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAll_in_ruleTCPFlag3657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNone_in_ruleTCPFlag3676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePsh_in_ruleTCPFlag3695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUrg_in_ruleTCPFlag3714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSyn_in_entryRuleSyn3753 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSyn3764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleSyn3801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAck_in_entryRuleAck3841 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAck3852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleAck3889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFin_in_entryRuleFin3929 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFin3940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleFin3977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRst_in_entryRuleRst4017 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRst4028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleRst4065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAll_in_entryRuleAll4105 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAll4116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleAll4153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNone_in_entryRuleNone4193 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNone4204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleNone4241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePsh_in_entryRulePsh4281 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePsh4292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_rulePsh4329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUrg_in_entryRuleUrg4369 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUrg4380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleUrg4417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProtocol_in_entryRuleProtocol4457 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleProtocol4468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTcp_in_ruleProtocol4515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUdp_in_ruleProtocol4548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIcmp_in_ruleProtocol4581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTcp_in_entryRuleTcp4627 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTcp4638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleTcp4675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUdp_in_entryRuleUdp4715 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUdp4726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleUdp4763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIcmp_in_entryRuleIcmp4803 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIcmp4814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleIcmp4851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTarget_in_entryRuleTarget4891 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTarget4902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTarget4941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChain_in_entryRuleChain4985 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleChain4995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleChain5036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChainDeclaration_in_entryRuleChainDeclaration5078 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleChainDeclaration5088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleChainDeclaration5125 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_54_in_ruleChainDeclaration5137 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleChainName_in_ruleChainDeclaration5159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChainName_in_entryRuleChainName5194 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleChainName5204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleChainName5245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIPExpr_in_entryRuleIPExpr5286 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIPExpr5297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr5344 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_55_in_ruleIPExpr5362 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr5384 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_55_in_ruleIPExpr5402 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr5424 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_55_in_ruleIPExpr5442 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleipByteExpr_in_ruleIPExpr5464 = new BitSet(new long[]{0x0100000000000002L});
+    public static final BitSet FOLLOW_ruleIpRangeExpr_in_ruleIPExpr5492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleipByteExpr_in_entryRuleipByteExpr5540 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleipByteExpr5551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleipByteExpr5590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIpRangeExpr_in_entryRuleIpRangeExpr5635 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIpRangeExpr5646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleIpRangeExpr5684 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleIpRangeExpr5699 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -23,10 +23,8 @@ import org.xtext.example.iptables.iptables.IptablesPackage;
 import org.xtext.example.iptables.iptables.LP;
 import org.xtext.example.iptables.iptables.Match;
 import org.xtext.example.iptables.iptables.Model;
-import org.xtext.example.iptables.iptables.NormalMatchStates;
 import org.xtext.example.iptables.iptables.Rule;
 import org.xtext.example.iptables.iptables.State;
-import org.xtext.example.iptables.iptables.StateFulMatchStates;
 import org.xtext.example.iptables.iptables.TCPFlag;
 import org.xtext.example.iptables.services.IptablesGrammarAccess;
 
@@ -114,12 +112,6 @@ public class AbstractIptablesSemanticSequencer extends AbstractSemanticSequencer
 					return; 
 				}
 				else break;
-			case IptablesPackage.NORMAL_MATCH_STATES:
-				if(context == grammarAccess.getNormalMatchStatesRule()) {
-					sequence_NormalMatchStates(context, (NormalMatchStates) semanticObject); 
-					return; 
-				}
-				else break;
 			case IptablesPackage.RULE:
 				if(context == grammarAccess.getRuleRule()) {
 					sequence_Rule(context, (Rule) semanticObject); 
@@ -129,12 +121,6 @@ public class AbstractIptablesSemanticSequencer extends AbstractSemanticSequencer
 			case IptablesPackage.STATE:
 				if(context == grammarAccess.getStateRule()) {
 					sequence_State(context, (State) semanticObject); 
-					return; 
-				}
-				else break;
-			case IptablesPackage.STATE_FUL_MATCH_STATES:
-				if(context == grammarAccess.getStateFulMatchStatesRule()) {
-					sequence_StateFulMatchStates(context, (StateFulMatchStates) semanticObject); 
 					return; 
 				}
 				else break;
@@ -217,10 +203,10 @@ public class AbstractIptablesSemanticSequencer extends AbstractSemanticSequencer
 	 *     (
 	 *         (option='-A' | option='-D' | option='-P') 
 	 *         chain=Chain 
+	 *         protocol=Protocol? 
 	 *         ip=IPExpr? 
 	 *         interface=Interface? 
 	 *         ipDst=IPExpr? 
-	 *         protocol=Protocol? 
 	 *         sourcePort=INT? 
 	 *         destinationPort=INT? 
 	 *         neg?='!'? 
@@ -292,44 +278,9 @@ public class AbstractIptablesSemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     name=New
-	 */
-	protected void sequence_NormalMatchStates(EObject context, NormalMatchStates semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, IptablesPackage.Literals.NORMAL_MATCH_STATES__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IptablesPackage.Literals.NORMAL_MATCH_STATES__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNormalMatchStatesAccess().getNameNewParserRuleCall_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (declaration=ChainDeclaration | filter=FilterDeclaration)
 	 */
 	protected void sequence_Rule(EObject context, Rule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=NoneS | 
-	 *         name=SynSent | 
-	 *         name=SynRecv | 
-	 *         name=Established | 
-	 *         name=FinWait | 
-	 *         name=CloseWait | 
-	 *         name=LastAck | 
-	 *         name=TimeWait | 
-	 *         name=Close
-	 *     )
-	 */
-	protected void sequence_StateFulMatchStates(EObject context, StateFulMatchStates semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -351,7 +302,9 @@ public class AbstractIptablesSemanticSequencer extends AbstractSemanticSequencer
 	 *         name=Fin | 
 	 *         name=Rst | 
 	 *         name=All | 
-	 *         name=None
+	 *         name=None | 
+	 *         name=Psh | 
+	 *         name=Urg
 	 *     )
 	 */
 	protected void sequence_TCPFlag(EObject context, TCPFlag semanticObject) {

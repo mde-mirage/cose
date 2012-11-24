@@ -25,9 +25,11 @@ public class InternalIptablesLexer extends Lexer {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__20=20;
     public static final int EOF=-1;
+    public static final int T__55=55;
     public static final int T__19=19;
-    public static final int T__16=16;
+    public static final int T__56=56;
     public static final int T__51=51;
+    public static final int T__16=16;
     public static final int T__52=52;
     public static final int T__15=15;
     public static final int T__53=53;
@@ -167,10 +169,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:15:7: ( '-s' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:15:9: '-s'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:15:7: ( '-p' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:15:9: '-p'
             {
-            match("-s"); 
+            match("-p"); 
 
 
             }
@@ -188,10 +190,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:16:7: ( '-i' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:16:9: '-i'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:16:7: ( '-s' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:16:9: '-s'
             {
-            match("-i"); 
+            match("-s"); 
 
 
             }
@@ -209,10 +211,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:17:7: ( '-d' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:17:9: '-d'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:17:7: ( '-i' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:17:9: '-i'
             {
-            match("-d"); 
+            match("-i"); 
 
 
             }
@@ -230,10 +232,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:18:7: ( '-p' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:18:9: '-p'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:18:7: ( '-d' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:18:9: '-d'
             {
-            match("-p"); 
+            match("-d"); 
 
 
             }
@@ -334,10 +336,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:23:7: ( '--m' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:23:9: '--m'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:23:7: ( '-m' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:23:9: '-m'
             {
-            match("--m"); 
+            match("-m"); 
 
 
             }
@@ -879,10 +881,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:49:7: ( 'tcp' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:49:9: 'tcp'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:49:7: ( 'PSH' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:49:9: 'PSH'
             {
-            match("tcp"); 
+            match("PSH"); 
 
 
             }
@@ -900,10 +902,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:50:7: ( 'udp' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:50:9: 'udp'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:50:7: ( 'URG' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:50:9: 'URG'
             {
-            match("udp"); 
+            match("URG"); 
 
 
             }
@@ -921,10 +923,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:51:7: ( 'icmp' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:51:9: 'icmp'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:51:7: ( 'tcp' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:51:9: 'tcp'
             {
-            match("icmp"); 
+            match("tcp"); 
 
 
             }
@@ -942,10 +944,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:52:7: ( '-N' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:52:9: '-N'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:52:7: ( 'udp' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:52:9: 'udp'
             {
-            match("-N"); 
+            match("udp"); 
 
 
             }
@@ -963,10 +965,11 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:53:7: ( '.' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:53:9: '.'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:53:7: ( 'icmp' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:53:9: 'icmp'
             {
-            match('.'); 
+            match("icmp"); 
+
 
             }
 
@@ -983,10 +986,11 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:54:7: ( '/' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:54:9: '/'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:54:7: ( '-N' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:54:9: '-N'
             {
-            match('/'); 
+            match("-N"); 
+
 
             }
 
@@ -998,15 +1002,55 @@ public class InternalIptablesLexer extends Lexer {
     }
     // $ANTLR end "T__54"
 
+    // $ANTLR start "T__55"
+    public final void mT__55() throws RecognitionException {
+        try {
+            int _type = T__55;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:55:7: ( '.' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:55:9: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__55"
+
+    // $ANTLR start "T__56"
+    public final void mT__56() throws RecognitionException {
+        try {
+            int _type = T__56;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:56:7: ( '/' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:56:9: '/'
+            {
+            match('/'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__56"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2252:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2252:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2295:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2295:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2252:11: ( '^' )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2295:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1015,7 +1059,7 @@ public class InternalIptablesLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2252:11: '^'
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2295:11: '^'
                     {
                     match('^'); 
 
@@ -1033,7 +1077,7 @@ public class InternalIptablesLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2252:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2295:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1082,10 +1126,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2254:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2254:12: ( '0' .. '9' )+
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2297:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2297:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2254:12: ( '0' .. '9' )+
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2297:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1099,7 +1143,7 @@ public class InternalIptablesLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2254:13: '0' .. '9'
+            	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2297:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1131,10 +1175,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1152,10 +1196,10 @@ public class InternalIptablesLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1171,7 +1215,7 @@ public class InternalIptablesLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1187,7 +1231,7 @@ public class InternalIptablesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1212,10 +1256,10 @@ public class InternalIptablesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1231,7 +1275,7 @@ public class InternalIptablesLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1247,7 +1291,7 @@ public class InternalIptablesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2256:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2299:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1290,12 +1334,12 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2258:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2258:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2301:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2301:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2258:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2301:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1320,7 +1364,7 @@ public class InternalIptablesLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2258:52: .
+            	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2301:52: .
             	    {
             	    matchAny(); 
 
@@ -1350,12 +1394,12 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1368,7 +1412,7 @@ public class InternalIptablesLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1388,7 +1432,7 @@ public class InternalIptablesLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1397,9 +1441,9 @@ public class InternalIptablesLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:41: ( '\\r' )?
+                    // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1408,7 +1452,7 @@ public class InternalIptablesLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2260:41: '\\r'
+                            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2303:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1440,10 +1484,10 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2262:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2262:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2305:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2305:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2262:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2305:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1497,8 +1541,8 @@ public class InternalIptablesLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2264:16: ( . )
-            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2264:18: .
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2307:16: ( . )
+            // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:2307:18: .
             {
             matchAny(); 
 
@@ -1513,8 +1557,8 @@ public class InternalIptablesLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=51;
+        // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=53;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1826,49 +1870,63 @@ public class InternalIptablesLexer extends Lexer {
                 }
                 break;
             case 45 :
-                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:274: RULE_ID
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:274: T__55
+                {
+                mT__55(); 
+
+                }
+                break;
+            case 46 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:280: T__56
+                {
+                mT__56(); 
+
+                }
+                break;
+            case 47 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:286: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 46 :
-                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:282: RULE_INT
+            case 48 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:294: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 47 :
-                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:291: RULE_STRING
+            case 49 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:303: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 48 :
-                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:303: RULE_ML_COMMENT
+            case 50 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:315: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 49 :
-                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:319: RULE_SL_COMMENT
+            case 51 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:331: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 50 :
-                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:335: RULE_WS
+            case 52 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:347: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 51 :
-                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:343: RULE_ANY_OTHER
+            case 53 :
+                // ../org.xtext.firewall.iptables/src-gen/org/xtext/example/iptables/parser/antlr/internal/InternalIptables.g:1:355: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1882,105 +1940,107 @@ public class InternalIptablesLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\34\1\31\2\uffff\14\34\1\uffff\1\73\1\31\2\uffff\2\31"+
-        "\2\uffff\2\34\15\uffff\17\34\7\uffff\2\34\6\uffff\2\34\1\137\1\140"+
-        "\2\34\1\144\3\34\1\150\1\151\1\152\1\153\1\154\1\34\1\156\4\uffff"+
-        "\3\34\2\uffff\1\165\2\34\1\uffff\3\34\5\uffff\1\34\3\uffff\1\34"+
-        "\1\176\2\34\1\uffff\2\34\1\u0084\3\34\1\uffff\1\34\1\uffff\5\34"+
-        "\1\uffff\3\34\1\uffff\10\34\1\u009b\1\uffff\1\34\1\u009f\1\u00a0"+
-        "\1\34\1\u00a2\1\34\1\u00a4\1\34\3\uffff\1\u00a6\2\uffff\1\34\1\uffff"+
-        "\1\34\1\uffff\1\u00a9\1\uffff\1\34\1\u00ab\1\uffff\1\u00ac\2\uffff";
+        "\1\uffff\1\36\1\33\2\uffff\16\36\1\uffff\1\100\1\33\2\uffff\2\33"+
+        "\2\uffff\2\36\16\uffff\21\36\7\uffff\2\36\5\uffff\2\36\1\145\1\146"+
+        "\2\36\1\152\3\36\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1\36"+
+        "\1\166\4\uffff\3\36\2\uffff\1\175\2\36\1\uffff\3\36\7\uffff\1\36"+
+        "\3\uffff\1\36\1\u0086\2\36\1\uffff\2\36\1\u008c\3\36\1\uffff\1\36"+
+        "\1\uffff\5\36\1\uffff\3\36\1\uffff\10\36\1\u00a3\1\uffff\1\36\1"+
+        "\u00a7\1\u00a8\1\36\1\u00aa\1\36\1\u00ac\1\36\3\uffff\1\u00ae\2"+
+        "\uffff\1\36\1\uffff\1\36\1\uffff\1\u00b1\1\uffff\1\36\1\u00b3\1"+
+        "\uffff\1\u00b4\2\uffff";
     static final String DFA12_eofS =
-        "\u00ad\uffff";
+        "\u00b5\uffff";
     static final String DFA12_minS =
         "\1\0\1\143\1\55\2\uffff\1\157\1\131\1\105\1\123\1\111\1\114\1\101"+
-        "\1\111\1\103\1\123\1\143\1\144\1\uffff\1\52\1\101\2\uffff\2\0\2"+
-        "\uffff\1\164\1\155\10\uffff\1\143\4\uffff\1\156\1\141\1\116\1\127"+
-        "\1\116\1\124\1\116\1\117\1\123\1\115\1\113\1\114\1\124\2\160\7\uffff"+
-        "\1\141\2\160\2\uffff\1\164\2\uffff\1\156\1\164\2\60\1\105\1\101"+
-        "\1\60\1\123\1\124\1\105\5\60\1\142\1\60\3\uffff\1\144\1\164\1\145"+
-        "\1\122\2\uffff\1\60\1\102\1\127\1\uffff\1\105\2\137\5\uffff\1\154"+
-        "\1\uffff\1\164\1\uffff\1\162\1\60\2\105\1\uffff\1\114\1\101\1\60"+
-        "\1\101\1\127\1\145\2\141\1\uffff\1\116\1\103\2\111\1\127\1\uffff"+
-        "\1\103\1\101\1\163\1\164\1\143\1\124\1\126\1\123\1\124\1\101\1\113"+
-        "\1\111\1\60\1\145\1\153\2\60\1\110\1\60\1\111\1\60\1\124\3\uffff"+
-        "\1\60\2\uffff\1\105\1\uffff\1\124\1\uffff\1\60\1\uffff\1\104\1\60"+
-        "\1\uffff\1\60\2\uffff";
+        "\1\111\1\103\2\123\1\122\1\143\1\144\1\uffff\1\52\1\101\2\uffff"+
+        "\2\0\2\uffff\1\164\1\155\10\uffff\1\143\5\uffff\1\156\1\141\1\116"+
+        "\1\127\1\116\1\124\1\116\1\117\1\123\1\115\1\113\1\114\1\124\1\110"+
+        "\1\107\2\160\7\uffff\1\141\2\160\1\uffff\1\164\2\uffff\1\156\1\164"+
+        "\2\60\1\105\1\101\1\60\1\123\1\124\1\105\7\60\1\142\1\60\3\uffff"+
+        "\1\144\1\164\1\145\1\122\2\uffff\1\60\1\102\1\127\1\uffff\1\105"+
+        "\2\137\7\uffff\1\154\1\uffff\1\164\1\uffff\1\162\1\60\2\105\1\uffff"+
+        "\1\114\1\101\1\60\1\101\1\127\1\145\2\141\1\uffff\1\116\1\103\2"+
+        "\111\1\127\1\uffff\1\103\1\101\1\163\1\164\1\143\1\124\1\126\1\123"+
+        "\1\124\1\101\1\113\1\111\1\60\1\145\1\153\2\60\1\110\1\60\1\111"+
+        "\1\60\1\124\3\uffff\1\60\2\uffff\1\105\1\uffff\1\124\1\uffff\1\60"+
+        "\1\uffff\1\104\1\60\1\uffff\1\60\2\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\160\1\163\2\uffff\1\157\1\164\1\117\1\123\1\111\1\114"+
-        "\1\101\1\111\1\114\1\123\1\143\1\144\1\uffff\1\57\1\172\2\uffff"+
-        "\2\uffff\2\uffff\1\164\1\155\10\uffff\1\164\4\uffff\1\156\1\141"+
-        "\1\116\1\127\1\116\1\124\1\116\1\117\1\123\1\115\1\113\1\114\1\124"+
-        "\2\160\7\uffff\1\141\1\160\1\171\2\uffff\1\164\2\uffff\1\156\1\164"+
-        "\2\172\1\105\1\101\1\172\1\123\1\124\1\105\5\172\1\142\1\172\3\uffff"+
-        "\1\163\1\164\1\145\1\123\2\uffff\1\172\1\102\1\127\1\uffff\1\105"+
-        "\2\137\5\uffff\1\154\1\uffff\1\164\1\uffff\1\162\1\172\2\105\1\uffff"+
-        "\1\114\1\101\1\172\1\101\1\127\1\145\2\141\1\uffff\1\116\1\103\2"+
-        "\111\1\127\1\uffff\1\103\1\101\1\163\1\164\1\143\1\124\1\126\1\123"+
-        "\1\124\1\101\1\113\1\111\1\172\1\165\1\153\2\172\1\110\1\172\1\111"+
-        "\1\172\1\124\3\uffff\1\172\2\uffff\1\105\1\uffff\1\124\1\uffff\1"+
-        "\172\1\uffff\1\104\1\172\1\uffff\1\172\2\uffff";
+        "\1\101\1\111\1\114\2\123\1\122\1\143\1\144\1\uffff\1\57\1\172\2"+
+        "\uffff\2\uffff\2\uffff\1\164\1\155\10\uffff\1\164\5\uffff\1\156"+
+        "\1\141\1\116\1\127\1\116\1\124\1\116\1\117\1\123\1\115\1\113\1\114"+
+        "\1\124\1\110\1\107\2\160\7\uffff\1\141\1\160\1\171\1\uffff\1\164"+
+        "\2\uffff\1\156\1\164\2\172\1\105\1\101\1\172\1\123\1\124\1\105\7"+
+        "\172\1\142\1\172\3\uffff\1\163\1\164\1\145\1\123\2\uffff\1\172\1"+
+        "\102\1\127\1\uffff\1\105\2\137\7\uffff\1\154\1\uffff\1\164\1\uffff"+
+        "\1\162\1\172\2\105\1\uffff\1\114\1\101\1\172\1\101\1\127\1\145\2"+
+        "\141\1\uffff\1\116\1\103\2\111\1\127\1\uffff\1\103\1\101\1\163\1"+
+        "\164\1\143\1\124\1\126\1\123\1\124\1\101\1\113\1\111\1\172\1\165"+
+        "\1\153\2\172\1\110\1\172\1\111\1\172\1\124\3\uffff\1\172\2\uffff"+
+        "\1\105\1\uffff\1\124\1\uffff\1\172\1\uffff\1\104\1\172\1\uffff\1"+
+        "\172\2\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\13\1\17\14\uffff\1\53\2\uffff\1\55\1\56\2\uffff\1\62"+
-        "\1\63\2\uffff\1\55\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\uffff\1\24\1\52"+
-        "\1\13\1\17\17\uffff\1\53\1\60\1\61\1\54\1\56\1\57\1\62\3\uffff\1"+
-        "\12\1\15\1\uffff\1\23\1\25\21\uffff\1\11\1\14\1\22\4\uffff\1\42"+
-        "\1\30\3\uffff\1\44\3\uffff\1\43\1\46\1\45\1\47\1\50\1\uffff\1\51"+
-        "\1\uffff\1\20\4\uffff\1\31\10\uffff\1\27\5\uffff\1\41\26\uffff\1"+
-        "\1\1\16\1\21\1\uffff\1\32\1\33\1\uffff\1\35\1\uffff\1\37\1\uffff"+
+        "\3\uffff\1\13\1\17\16\uffff\1\55\2\uffff\1\57\1\60\2\uffff\1\64"+
+        "\1\65\2\uffff\1\57\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\uffff\1\15\1\24"+
+        "\1\54\1\13\1\17\21\uffff\1\55\1\62\1\63\1\56\1\60\1\61\1\64\3\uffff"+
+        "\1\12\1\uffff\1\23\1\25\23\uffff\1\11\1\14\1\22\4\uffff\1\42\1\30"+
+        "\3\uffff\1\44\3\uffff\1\43\1\46\1\45\1\47\1\50\1\51\1\52\1\uffff"+
+        "\1\53\1\uffff\1\20\4\uffff\1\31\10\uffff\1\27\5\uffff\1\41\26\uffff"+
+        "\1\1\1\16\1\21\1\uffff\1\32\1\33\1\uffff\1\35\1\uffff\1\37\1\uffff"+
         "\1\26\2\uffff\1\40\1\uffff\1\36\1\34";
     static final String DFA12_specialS =
-        "\1\1\25\uffff\1\2\1\0\u0095\uffff}>";
+        "\1\1\27\uffff\1\0\1\2\u009b\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\31\2\30\2\31\1\30\22\31\1\30\1\3\1\26\4\31\1\27\4\31\1\4"+
-            "\1\2\1\21\1\22\12\25\7\31\1\15\1\24\1\12\1\24\1\10\1\11\5\24"+
-            "\1\13\1\24\1\7\3\24\1\16\1\6\1\14\6\24\3\31\1\23\1\24\1\31\2"+
-            "\24\1\5\5\24\1\1\12\24\1\17\1\20\5\24\uff85\31",
-            "\1\33\14\uffff\1\32",
-            "\1\44\23\uffff\1\35\2\uffff\1\36\11\uffff\1\46\1\uffff\1\37"+
-            "\23\uffff\1\42\4\uffff\1\41\1\45\5\uffff\1\43\2\uffff\1\40",
+            "\11\33\2\32\2\33\1\32\22\33\1\32\1\3\1\30\4\33\1\31\4\33\1\4"+
+            "\1\2\1\23\1\24\12\27\7\33\1\15\1\26\1\12\1\26\1\10\1\11\5\26"+
+            "\1\13\1\26\1\7\1\26\1\17\1\26\1\16\1\6\1\14\1\20\5\26\3\33\1"+
+            "\25\1\26\1\33\2\26\1\5\5\26\1\1\12\26\1\21\1\22\5\26\uff85\33",
+            "\1\35\14\uffff\1\34",
+            "\1\46\23\uffff\1\37\2\uffff\1\40\11\uffff\1\51\1\uffff\1\41"+
+            "\23\uffff\1\45\4\uffff\1\44\1\50\2\uffff\1\47\2\uffff\1\42\2"+
+            "\uffff\1\43",
             "",
             "",
-            "\1\51",
-            "\1\53\32\uffff\1\52",
-            "\1\54\11\uffff\1\55",
-            "\1\56",
-            "\1\57",
-            "\1\60",
+            "\1\54",
+            "\1\56\32\uffff\1\55",
+            "\1\57\11\uffff\1\60",
             "\1\61",
             "\1\62",
-            "\1\63\10\uffff\1\64",
+            "\1\63",
+            "\1\64",
             "\1\65",
-            "\1\66",
-            "\1\67",
+            "\1\66\10\uffff\1\67",
+            "\1\70",
+            "\1\71",
+            "\1\72",
+            "\1\73",
+            "\1\74",
             "",
-            "\1\71\4\uffff\1\72",
-            "\32\34\4\uffff\1\34\1\uffff\32\34",
-            "",
-            "",
-            "\0\75",
-            "\0\75",
-            "",
-            "",
-            "\1\77",
-            "\1\100",
+            "\1\76\4\uffff\1\77",
+            "\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
             "",
+            "\0\102",
+            "\0\102",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\1\104\1\102\7\uffff\1\106\1\103\5\uffff\1\101\1\105",
+            "\1\104",
+            "\1\105",
             "",
             "",
             "",
             "",
-            "\1\107",
-            "\1\110",
-            "\1\111",
-            "\1\112",
+            "",
+            "",
+            "",
+            "",
+            "\1\110\1\107\7\uffff\1\112\6\uffff\1\106\1\111",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\113",
             "\1\114",
             "\1\115",
@@ -1992,121 +2052,130 @@ public class InternalIptablesLexer extends Lexer {
             "\1\123",
             "\1\124",
             "\1\125",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\126",
             "\1\127",
-            "\1\130\3\uffff\1\132\4\uffff\1\131",
-            "",
-            "",
+            "\1\130",
+            "\1\131",
+            "\1\132",
             "\1\133",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "",
             "\1\134",
             "\1\135",
-            "\12\34\7\uffff\32\34\4\uffff\1\136\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\136\3\uffff\1\140\4\uffff\1\137",
+            "",
             "\1\141",
+            "",
+            "",
             "\1\142",
-            "\12\34\7\uffff\32\34\4\uffff\1\143\1\uffff\32\34",
-            "\1\145",
-            "\1\146",
+            "\1\143",
+            "\12\36\7\uffff\32\36\4\uffff\1\144\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\147",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\150",
+            "\12\36\7\uffff\32\36\4\uffff\1\151\1\uffff\32\36",
+            "\1\153",
+            "\1\154",
             "\1\155",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\165",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
             "",
             "",
-            "\1\160\16\uffff\1\157",
-            "\1\161",
-            "\1\162",
-            "\1\164\1\163",
-            "",
-            "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\166",
-            "\1\167",
-            "",
-            "\1\170",
+            "\1\170\16\uffff\1\167",
             "\1\171",
             "\1\172",
+            "\1\174\1\173",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\173",
-            "",
-            "\1\174",
-            "",
-            "\1\175",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\176",
             "\1\177",
-            "\1\u0080",
             "",
+            "\1\u0080",
             "\1\u0081",
             "\1\u0082",
-            "\12\34\7\uffff\32\34\4\uffff\1\u0083\1\uffff\32\34",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0083",
+            "",
+            "\1\u0084",
+            "",
             "\1\u0085",
-            "\1\u0086",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\u0087",
             "\1\u0088",
-            "\1\u0089",
             "",
+            "\1\u0089",
             "\1\u008a",
-            "\1\u008b",
-            "\1\u008c",
+            "\12\36\7\uffff\32\36\4\uffff\1\u008b\1\uffff\32\36",
             "\1\u008d",
             "\1\u008e",
-            "",
             "\1\u008f",
             "\1\u0090",
             "\1\u0091",
+            "",
             "\1\u0092",
             "\1\u0093",
             "\1\u0094",
             "\1\u0095",
             "\1\u0096",
+            "",
             "\1\u0097",
             "\1\u0098",
             "\1\u0099",
             "\1\u009a",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u009c\17\uffff\1\u009d",
+            "\1\u009b",
+            "\1\u009c",
+            "\1\u009d",
             "\1\u009e",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\u009f",
+            "\1\u00a0",
             "\1\u00a1",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u00a3",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\u00a5",
+            "\1\u00a2",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\u00a4\17\uffff\1\u00a5",
+            "\1\u00a6",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\u00a9",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\u00ab",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\u00ad",
             "",
             "",
             "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
             "",
-            "\1\u00a7",
+            "\1\u00af",
             "",
-            "\1\u00a8",
+            "\1\u00b0",
             "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
-            "\1\u00aa",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\u00b2",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "",
             ""
     };
@@ -2141,19 +2210,19 @@ public class InternalIptablesLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_23 = input.LA(1);
+                        int LA12_24 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 61;}
+                        if ( ((LA12_24>='\u0000' && LA12_24<='\uFFFF')) ) {s = 66;}
 
-                        else s = 25;
+                        else s = 27;
 
                         if ( s>=0 ) return s;
                         break;
@@ -2189,37 +2258,41 @@ public class InternalIptablesLexer extends Lexer {
 
                         else if ( (LA12_0=='R') ) {s = 14;}
 
-                        else if ( (LA12_0=='t') ) {s = 15;}
+                        else if ( (LA12_0=='P') ) {s = 15;}
 
-                        else if ( (LA12_0=='u') ) {s = 16;}
+                        else if ( (LA12_0=='U') ) {s = 16;}
 
-                        else if ( (LA12_0=='.') ) {s = 17;}
+                        else if ( (LA12_0=='t') ) {s = 17;}
 
-                        else if ( (LA12_0=='/') ) {s = 18;}
+                        else if ( (LA12_0=='u') ) {s = 18;}
 
-                        else if ( (LA12_0=='^') ) {s = 19;}
+                        else if ( (LA12_0=='.') ) {s = 19;}
 
-                        else if ( (LA12_0=='B'||LA12_0=='D'||(LA12_0>='G' && LA12_0<='K')||LA12_0=='M'||(LA12_0>='O' && LA12_0<='Q')||(LA12_0>='U' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='b')||(LA12_0>='d' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='s')||(LA12_0>='v' && LA12_0<='z')) ) {s = 20;}
+                        else if ( (LA12_0=='/') ) {s = 20;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 21;}
+                        else if ( (LA12_0=='^') ) {s = 21;}
 
-                        else if ( (LA12_0=='\"') ) {s = 22;}
+                        else if ( (LA12_0=='B'||LA12_0=='D'||(LA12_0>='G' && LA12_0<='K')||LA12_0=='M'||LA12_0=='O'||LA12_0=='Q'||(LA12_0>='V' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='b')||(LA12_0>='d' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='s')||(LA12_0>='v' && LA12_0<='z')) ) {s = 22;}
 
-                        else if ( (LA12_0=='\'') ) {s = 23;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 23;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 24;}
+                        else if ( (LA12_0=='\"') ) {s = 24;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 25;}
+                        else if ( (LA12_0=='\'') ) {s = 25;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 26;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 27;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_22 = input.LA(1);
+                        int LA12_25 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_22>='\u0000' && LA12_22<='\uFFFF')) ) {s = 61;}
+                        if ( ((LA12_25>='\u0000' && LA12_25<='\uFFFF')) ) {s = 66;}
 
-                        else s = 25;
+                        else s = 27;
 
                         if ( s>=0 ) return s;
                         break;

@@ -37,7 +37,7 @@ helper def : findPaths(input : DFA!State, partial : Sequence(DFA!State), visited
 -- stores all the paths from q0 to qf in a DFA model
 -----------------------------------------------------------------------------------------
 helper def : PATHS : Set(Sequence(DFA!State)) =
-	thisModule.findPaths(DFA!InitialState.allInstances().first(), Sequence{}, Sequence{})
+	thisModule.findPaths(DFA!InitialState.allInstances().first().debug('init'), Sequence{}, Sequence{}).debug('c:')
 ;
 
 -----------------------------------------------------------------------------------------      
@@ -83,7 +83,11 @@ helper def : transtionMatch(state: DFA!State, nextState: DFA!State, r: Network!C
 			true
 		else 
 			if (state.transitions->select(e | e.targetState = nextState and e.symbols.literal.toLower() = r.setFlags.name.toLower())->notEmpty()) then
-				true	
+				if (Sequence{r.srcHost, r.desHost}->includesAll(Sequence{ri.srcHost, ri.desHost})) then
+					true
+				else
+					false
+				endif
 			else
 				false
 			endif
@@ -130,6 +134,32 @@ helper def : consumeAutomaton (path: Sequence(DFA!State), ri:Network!Connection)
 	)
 ;
 
+helper def : findInvalidTransitionMatch(state: String, ri: Network!Connection, transition : String) : Network!Connection =
+	--It will make sense to have more than one rule??
+	thisModule.RULES->select(e | e.states.name = state and e.setFlags.name =  transition and Sequence{e.srcHost, e.desHost}->includesAll(Sequence{ri.srcHost, ri.desHost}))->first()
+;
+
+-----------------------------------------------------------------------------------------      
+-- returns a list of non-consumed states that will be translated later into errors with
+-- a lazy rule
+-----------------------------------------------------------------------------------------
+helper def : consumeNonValidAutomaton (ri:Network!Connection) : Map(String, Sequence(OclAny))=
+	Sequence{DFA!InitialState.allInstances()}->append(DFA!RegularState.allInstances())->flatten()
+	->iterate(s; result : Map(String, Sequence(OclAny)) = Map{('visited', Sequence{}), ('nonConsumed', Sequence{})} |
+		DFA!Symbol.allInstances()->select(e | s.transitions->collect(e | e.symbols.literal)->excludes(e.literal))
+		->iterate(t; partial: Map(String, Sequence(OclAny)) = result |
+			let found : Network!Connection = thisModule.findInvalidTransitionMatch(s.name, ri, t.literal) in
+				if (found.oclIsUndefined()) then
+					Map{('visited', partial.get('visited')), 
+						('nonConsumed', partial.get('nonConsumed')->append(thisModule.printNewDenyRule(ri, s, t))->flatten())}
+				else
+					Map{('visited', partial.get('visited')->append(thisModule.printRule(found))->flatten()), 
+						('nonConsumed', partial.get('nonConsumed'))}
+				endif
+		)
+	)
+;
+
 helper def : printRule(r: Network!Connection) : Network!Connection =
 	r.debug('r= ' + 'SrcAddress = ' + r.srcHost.ipAddress
 		+ ' DstAddress = ' + r.desHost.ipAddress
@@ -155,19 +185,45 @@ helper def : printNewRule(r: Network!Connection, state: DFA!State, path: Sequenc
 	endif
 ;
 	
+helper def : printNewDenyRule(r: Network!Connection, state: DFA!State, tr:DFA!Transition) : Network!Connection =
+	if (tr.direction = 'r') then
+		r.debug('m= ' + 'SrcAddress = ' + r.srcHost.ipAddress
+			+ ' DstAddress = ' + r.desHost.ipAddress
+			+ ' SPort = ' + r.srcPort + ' DPort = ' + r.dstPort 
+			+ ' transition = ' + state.name + ' + ' + tr.literal
+			+ ' Action = ' + r.kind)
+	else
+		tr.debug('m= ' + 'SrcAddress = ' + r.desHost.ipAddress
+			+ ' DstAddress = ' + r.srcHost.ipAddress
+			+ ' SPort = ' + r.dstPort + ' DPort = ' + r.srcPort 
+			+ ' transition = ' + state.name + ' + ' + tr.literal
+			+ ' Action = ' + r.kind)
+	endif
+;
+	
 helper def : discovery() : Map(String, Sequence(OclAny)) =
 	
 	thisModule.RULES->iterate(r; res :  Map(String, Sequence(OclAny)) = Map{('visited', Sequence{}), ('result', Sequence{})} |
-		if (res.get('visited')->flatten()->excludes(r)) then
-			let L : Set(Sequence(DFA!State)) = thisModule.correlate(thisModule.PATHS, r.states, r.setFlags).debug('Correlate =') in
-				L->iterate(l; subRes : Map(String, Sequence(OclAny)) = Map{('visited', Sequence{}), ('result', Sequence{})} |
-					let partial: Map(String, Sequence(OclAny)) = thisModule.consumeAutomaton(l, r).debug('Subres:') in
-						
-						Map{('visited', subRes.get('visited')->append(partial.get('visited'))), 
-						('result',subRes.get('result')->append(partial.get('nonConsumed')))}		
-				)
+		if r.kind = #ACCEPT then
+			if (res.get('visited')->flatten()->excludes(r)) then
+				let L : Set(Sequence(DFA!State)) = thisModule.correlate(thisModule.PATHS, r.states, r.setFlags).debug('Correlate =') in
+					L->iterate(l; subRes : Map(String, Sequence(OclAny)) = res |
+						let partial: Map(String, Sequence(OclAny)) = thisModule.consumeAutomaton(l, r).debug('Subres:') in	
+							Map{('visited', subRes.get('visited')->append(partial.get('visited'))), 
+							('result',subRes.get('result')->append(partial.get('nonConsumed')))}
+					
+					)
+			else
+				res
+			endif
 		else
-			res
+			if (res.get('visited')->flatten()->excludes(r)) then
+				let partial: Map(String, Sequence(OclAny)) = thisModule.consumeNonValidAutomaton(r).debug('SubNotValid:') in 
+					Map{('visited', res.get('visited')->append(partial.get('visited'))), 
+					('result',res.get('result')->append(partial.get('nonConsumed')))}
+			else
+				res
+			endif
 		endif
 	)
 ;
@@ -175,7 +231,7 @@ helper def : discovery() : Map(String, Sequence(OclAny)) =
 		
 
 rule registerErrors{
-	from s: DFA!Dfa (thisModule.discovery().get('visited').debug('Paths:')->notEmpty())
+	from s: DFA!Dfa (thisModule.discovery().debug('Paths:')->toString()->writeTo('/home/salvador/Desktop/experiments/memoryOpen96.txt'))
 	to t: ERRORS!Errors (
 		--errors <- thisModule.discovery().get('visited')
 	)

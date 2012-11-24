@@ -76,8 +76,6 @@ public class IptablesFactoryImpl extends EFactoryImpl implements IptablesFactory
       case IptablesPackage.LP: return createLP();
       case IptablesPackage.MATCH: return createMatch();
       case IptablesPackage.STATE: return createState();
-      case IptablesPackage.STATE_FUL_MATCH_STATES: return createStateFulMatchStates();
-      case IptablesPackage.NORMAL_MATCH_STATES: return createNormalMatchStates();
       case IptablesPackage.TCP_FLAG: return createTCPFlag();
       case IptablesPackage.CHAIN: return createChain();
       case IptablesPackage.CUSTOM_CHAIN: return createCustomChain();
@@ -185,28 +183,6 @@ public class IptablesFactoryImpl extends EFactoryImpl implements IptablesFactory
   {
     StateImpl state = new StateImpl();
     return state;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StateFulMatchStates createStateFulMatchStates()
-  {
-    StateFulMatchStatesImpl stateFulMatchStates = new StateFulMatchStatesImpl();
-    return stateFulMatchStates;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NormalMatchStates createNormalMatchStates()
-  {
-    NormalMatchStatesImpl normalMatchStates = new NormalMatchStatesImpl();
-    return normalMatchStates;
   }
 
   /**

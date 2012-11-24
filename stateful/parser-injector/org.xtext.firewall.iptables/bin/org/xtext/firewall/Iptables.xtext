@@ -18,10 +18,11 @@ FilteringSpec:
 ;
 
 FilterSpec:
-	'iptables' option=('-A' | '-D' | '-P') chain=Chain ('-s' ip=IPExpr)? 
-	('-i' interface=Interface)? ('-d' ipDst=IPExpr)? ('-p' protocol=Protocol)? 
+	'iptables' option=('-A' | '-D' | '-P') chain=Chain 
+	('-p' protocol=Protocol)? ('-s' ip=IPExpr)? 
+	('-i' interface=Interface)? ('-d' ipDst=IPExpr)?  
 	('--sport' sourcePort=INT)? ('--dport' destinationPort=INT)? 
-	(neg?='!')? (syn?='--syn')? ('--m' matches=Match)? 
+	(neg?='!')? (syn?='--syn')? ('-m' matches=Match)? 
 	('--ctstate' states+=State (',' states+=State)*)?
 	('--ctdir' dir=Dir)? ('--ctstatus' status=Status)?  
 	('--state' states+=State (',' states+=State)*)? 
@@ -64,11 +65,11 @@ State:
 ;
 
 StateFulMatchStates:
-	name=(NoneS | SynSent | SynRecv | Established | FinWait | CloseWait | LastAck | TimeWait | Close)
+	(NoneS | SynSent | SynRecv | Established | FinWait | CloseWait | LastAck | TimeWait | Close)
 ;
 
 NormalMatchStates:
-	name=(New)
+	(New)
 ;
 
 New:
@@ -113,7 +114,7 @@ Close:
 
 
 TCPFlag:
-	name=(Syn | Ack | Fin | Rst | All | None)
+	name=(Syn | Ack | Fin | Rst | All | None | Psh | Urg)
 ;
 
 Syn:
@@ -138,6 +139,14 @@ All:
 
 None:
 	'NONE'
+;
+
+Psh:
+	'PSH'
+;
+
+Urg:
+	'URG'
 ;
 
 

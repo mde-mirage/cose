@@ -139,20 +139,6 @@ public class IptablesSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case IptablesPackage.STATE_FUL_MATCH_STATES:
-      {
-        StateFulMatchStates stateFulMatchStates = (StateFulMatchStates)theEObject;
-        T result = caseStateFulMatchStates(stateFulMatchStates);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case IptablesPackage.NORMAL_MATCH_STATES:
-      {
-        NormalMatchStates normalMatchStates = (NormalMatchStates)theEObject;
-        T result = caseNormalMatchStates(normalMatchStates);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case IptablesPackage.TCP_FLAG:
       {
         TCPFlag tcpFlag = (TCPFlag)theEObject;
@@ -333,38 +319,6 @@ public class IptablesSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseState(State object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>State Ful Match States</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>State Ful Match States</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStateFulMatchStates(StateFulMatchStates object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Normal Match States</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Normal Match States</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNormalMatchStates(NormalMatchStates object)
   {
     return null;
   }

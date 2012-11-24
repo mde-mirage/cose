@@ -107,24 +107,6 @@ public interface IptablesFactory extends EFactory
   State createState();
 
   /**
-   * Returns a new object of class '<em>State Ful Match States</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>State Ful Match States</em>'.
-   * @generated
-   */
-  StateFulMatchStates createStateFulMatchStates();
-
-  /**
-   * Returns a new object of class '<em>Normal Match States</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Normal Match States</em>'.
-   * @generated
-   */
-  NormalMatchStates createNormalMatchStates();
-
-  /**
    * Returns a new object of class '<em>TCP Flag</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

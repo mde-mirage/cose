@@ -23,10 +23,10 @@
     <genClasses ecoreClass="Iptables.ecore#//FilterSpec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/option"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Iptables.ecore#//FilterSpec/chain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/protocol"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/ip"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Iptables.ecore#//FilterSpec/interface"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/ipDst"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/protocol"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/sourcePort"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/destinationPort"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//FilterSpec/neg"/>
@@ -50,13 +50,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//Match/name"/>
     </genClasses>
     <genClasses ecoreClass="Iptables.ecore#//State">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Iptables.ecore#//State/name"/>
-    </genClasses>
-    <genClasses ecoreClass="Iptables.ecore#//StateFulMatchStates">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//StateFulMatchStates/name"/>
-    </genClasses>
-    <genClasses ecoreClass="Iptables.ecore#//NormalMatchStates">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//NormalMatchStates/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//State/name"/>
     </genClasses>
     <genClasses ecoreClass="Iptables.ecore#//TCPFlag">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Iptables.ecore#//TCPFlag/name"/>

@@ -123,16 +123,6 @@ public class IptablesAdapterFactory extends AdapterFactoryImpl
         return createStateAdapter();
       }
       @Override
-      public Adapter caseStateFulMatchStates(StateFulMatchStates object)
-      {
-        return createStateFulMatchStatesAdapter();
-      }
-      @Override
-      public Adapter caseNormalMatchStates(NormalMatchStates object)
-      {
-        return createNormalMatchStatesAdapter();
-      }
-      @Override
       public Adapter caseTCPFlag(TCPFlag object)
       {
         return createTCPFlagAdapter();
@@ -310,36 +300,6 @@ public class IptablesAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStateAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.iptables.iptables.StateFulMatchStates <em>State Ful Match States</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.iptables.iptables.StateFulMatchStates
-   * @generated
-   */
-  public Adapter createStateFulMatchStatesAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.iptables.iptables.NormalMatchStates <em>Normal Match States</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.iptables.iptables.NormalMatchStates
-   * @generated
-   */
-  public Adapter createNormalMatchStatesAdapter()
   {
     return null;
   }

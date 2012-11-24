@@ -17,10 +17,10 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getOption <em>Option</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getChain <em>Chain</em>}</li>
+ *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getIp <em>Ip</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getInterface <em>Interface</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getIpDst <em>Ip Dst</em>}</li>
- *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#getDestinationPort <em>Destination Port</em>}</li>
  *   <li>{@link org.xtext.example.iptables.iptables.FilterSpec#isNeg <em>Neg</em>}</li>
@@ -93,6 +93,32 @@ public interface FilterSpec extends FilteringSpec
    * @generated
    */
   void setChain(Chain value);
+
+  /**
+   * Returns the value of the '<em><b>Protocol</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Protocol</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Protocol</em>' attribute.
+   * @see #setProtocol(String)
+   * @see org.xtext.example.iptables.iptables.IptablesPackage#getFilterSpec_Protocol()
+   * @model
+   * @generated
+   */
+  String getProtocol();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.iptables.iptables.FilterSpec#getProtocol <em>Protocol</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Protocol</em>' attribute.
+   * @see #getProtocol()
+   * @generated
+   */
+  void setProtocol(String value);
 
   /**
    * Returns the value of the '<em><b>Ip</b></em>' attribute.
@@ -171,32 +197,6 @@ public interface FilterSpec extends FilteringSpec
    * @generated
    */
   void setIpDst(String value);
-
-  /**
-   * Returns the value of the '<em><b>Protocol</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Protocol</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Protocol</em>' attribute.
-   * @see #setProtocol(String)
-   * @see org.xtext.example.iptables.iptables.IptablesPackage#getFilterSpec_Protocol()
-   * @model
-   * @generated
-   */
-  String getProtocol();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.iptables.iptables.FilterSpec#getProtocol <em>Protocol</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Protocol</em>' attribute.
-   * @see #getProtocol()
-   * @generated
-   */
-  void setProtocol(String value);
 
   /**
    * Returns the value of the '<em><b>Source Port</b></em>' attribute.

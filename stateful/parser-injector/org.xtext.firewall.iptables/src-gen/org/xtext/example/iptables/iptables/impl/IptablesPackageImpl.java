@@ -24,10 +24,8 @@ import org.xtext.example.iptables.iptables.IptablesFactory;
 import org.xtext.example.iptables.iptables.IptablesPackage;
 import org.xtext.example.iptables.iptables.Match;
 import org.xtext.example.iptables.iptables.Model;
-import org.xtext.example.iptables.iptables.NormalMatchStates;
 import org.xtext.example.iptables.iptables.Rule;
 import org.xtext.example.iptables.iptables.State;
-import org.xtext.example.iptables.iptables.StateFulMatchStates;
 import org.xtext.example.iptables.iptables.TCPFlag;
 
 /**
@@ -100,20 +98,6 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
    * @generated
    */
   private EClass stateEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass stateFulMatchStatesEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass normalMatchStatesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -328,7 +312,7 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFilterSpec_Ip()
+  public EAttribute getFilterSpec_Protocol()
   {
     return (EAttribute)filterSpecEClass.getEStructuralFeatures().get(2);
   }
@@ -338,9 +322,19 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getFilterSpec_Ip()
+  {
+    return (EAttribute)filterSpecEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getFilterSpec_Interface()
   {
-    return (EReference)filterSpecEClass.getEStructuralFeatures().get(3);
+    return (EReference)filterSpecEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -349,16 +343,6 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
    * @generated
    */
   public EAttribute getFilterSpec_IpDst()
-  {
-    return (EAttribute)filterSpecEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFilterSpec_Protocol()
   {
     return (EAttribute)filterSpecEClass.getEStructuralFeatures().get(5);
   }
@@ -558,49 +542,9 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getState_Name()
+  public EAttribute getState_Name()
   {
-    return (EReference)stateEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getStateFulMatchStates()
-  {
-    return stateFulMatchStatesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStateFulMatchStates_Name()
-  {
-    return (EAttribute)stateFulMatchStatesEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getNormalMatchStates()
-  {
-    return normalMatchStatesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getNormalMatchStates_Name()
-  {
-    return (EAttribute)normalMatchStatesEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)stateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -738,10 +682,10 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
     filterSpecEClass = createEClass(FILTER_SPEC);
     createEAttribute(filterSpecEClass, FILTER_SPEC__OPTION);
     createEReference(filterSpecEClass, FILTER_SPEC__CHAIN);
+    createEAttribute(filterSpecEClass, FILTER_SPEC__PROTOCOL);
     createEAttribute(filterSpecEClass, FILTER_SPEC__IP);
     createEReference(filterSpecEClass, FILTER_SPEC__INTERFACE);
     createEAttribute(filterSpecEClass, FILTER_SPEC__IP_DST);
-    createEAttribute(filterSpecEClass, FILTER_SPEC__PROTOCOL);
     createEAttribute(filterSpecEClass, FILTER_SPEC__SOURCE_PORT);
     createEAttribute(filterSpecEClass, FILTER_SPEC__DESTINATION_PORT);
     createEAttribute(filterSpecEClass, FILTER_SPEC__NEG);
@@ -765,13 +709,7 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
     createEAttribute(matchEClass, MATCH__NAME);
 
     stateEClass = createEClass(STATE);
-    createEReference(stateEClass, STATE__NAME);
-
-    stateFulMatchStatesEClass = createEClass(STATE_FUL_MATCH_STATES);
-    createEAttribute(stateFulMatchStatesEClass, STATE_FUL_MATCH_STATES__NAME);
-
-    normalMatchStatesEClass = createEClass(NORMAL_MATCH_STATES);
-    createEAttribute(normalMatchStatesEClass, NORMAL_MATCH_STATES__NAME);
+    createEAttribute(stateEClass, STATE__NAME);
 
     tcpFlagEClass = createEClass(TCP_FLAG);
     createEAttribute(tcpFlagEClass, TCP_FLAG__NAME);
@@ -836,10 +774,10 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
     initEClass(filterSpecEClass, FilterSpec.class, "FilterSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFilterSpec_Option(), ecorePackage.getEString(), "option", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFilterSpec_Chain(), this.getChain(), null, "chain", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFilterSpec_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFilterSpec_Ip(), ecorePackage.getEString(), "ip", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFilterSpec_Interface(), this.getInterface(), null, "interface", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFilterSpec_IpDst(), ecorePackage.getEString(), "ipDst", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFilterSpec_Protocol(), ecorePackage.getEString(), "protocol", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFilterSpec_SourcePort(), ecorePackage.getEInt(), "sourcePort", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFilterSpec_DestinationPort(), ecorePackage.getEInt(), "destinationPort", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFilterSpec_Neg(), ecorePackage.getEBoolean(), "neg", null, 0, 1, FilterSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -863,13 +801,7 @@ public class IptablesPackageImpl extends EPackageImpl implements IptablesPackage
     initEAttribute(getMatch_Name(), ecorePackage.getEString(), "name", null, 0, 1, Match.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getState_Name(), ecorePackage.getEObject(), null, "name", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stateFulMatchStatesEClass, StateFulMatchStates.class, "StateFulMatchStates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStateFulMatchStates_Name(), ecorePackage.getEString(), "name", null, 0, 1, StateFulMatchStates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(normalMatchStatesEClass, NormalMatchStates.class, "NormalMatchStates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNormalMatchStates_Name(), ecorePackage.getEString(), "name", null, 0, 1, NormalMatchStates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tcpFlagEClass, TCPFlag.class, "TCPFlag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTCPFlag_Name(), ecorePackage.getEString(), "name", null, 0, 1, TCPFlag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
